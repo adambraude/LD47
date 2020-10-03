@@ -32,7 +32,7 @@ func _process(delta):
 		$AnimatedSprite.stop()
 	position += velocity * delta
 	position.x = clamp(position.x, screen_size.x*leftBound, screen_size.x*rightBound)
-	position.y = clamp(position.y, 0, screen_size.y)
+	#position.y = clamp(position.y, 0, screen_size.y)
 	
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "Moving"
