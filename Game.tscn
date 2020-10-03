@@ -1,23 +1,22 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://background.png" type="Texture" id=1]
-[ext_resource path="res://car.PNG" type="Texture" id=2]
+[ext_resource path="res://assets/felbat_null.png" type="Texture" id=2]
 [ext_resource path="res://Player.gd" type="Script" id=3]
-[ext_resource path="res://angledcar.png" type="Texture" id=4]
 [ext_resource path="res://placeholdertree.png" type="Texture" id=5]
-[ext_resource path="res://Road Frames/road4.png" type="Texture" id=6]
-[ext_resource path="res://Road Frames/road3.png" type="Texture" id=7]
-[ext_resource path="res://Road Frames/road2.png" type="Texture" id=8]
-[ext_resource path="res://Road Frames/road1.png" type="Texture" id=9]
+[ext_resource path="res://assets/road-st-0.png" type="Texture" id=6]
+[ext_resource path="res://assets/road-st-3.png" type="Texture" id=7]
+[ext_resource path="res://assets/road-st-1.png" type="Texture" id=8]
+[ext_resource path="res://assets/road-st-2.png" type="Texture" id=9]
 [ext_resource path="res://Background.gd" type="Script" id=10]
 [ext_resource path="res://Road.gd" type="Script" id=11]
 [ext_resource path="res://Game.gd" type="Script" id=12]
 [ext_resource path="res://ParallaxLayer.gd" type="Script" id=13]
-[ext_resource path="res://demon.png" type="Texture" id=14]
+[ext_resource path="res://assets/car0_base.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Road",
 "speed": 30.0
@@ -52,12 +51,12 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "Moving",
 "speed": 5.0
@@ -68,7 +67,7 @@ extents = Vector2( 113.83, 62.9793 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -96,7 +95,6 @@ __meta__ = {
 
 [node name="Road" type="AnimatedSprite" parent="Background/ParallaxLayer"]
 position = Vector2( 1007.94, 727.103 )
-scale = Vector2( 0.961526, 1.22739 )
 frames = SubResource( 1 )
 animation = "Road"
 script = ExtResource( 11 )
@@ -121,7 +119,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( 144.759, 147.137 )
 rotation = -3.93931e-08
-scale = Vector2( 0.504319, 0.48001 )
 frames = SubResource( 3 )
 animation = "Moving"
 offset = Vector2( -5.64526, -21.6229 )
@@ -135,7 +132,6 @@ shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Bat"]
 position = Vector2( 901.419, 273.518 )
-scale = Vector2( 0.502192, 0.63409 )
 frames = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bat"]
