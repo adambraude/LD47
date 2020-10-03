@@ -63,7 +63,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 113.83, 62.9793 )
+extents = Vector2( 63.3024, 64.1042 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -95,8 +95,8 @@ frames = SubResource( 1 )
 animation = "Road"
 
 [node name="Tree" type="Sprite" parent="Background/ParallaxLayer"]
-position = Vector2( -318.535, 994.365 )
-scale = Vector2( 2.33327, 1.86027 )
+position = Vector2( 192.651, 645.263 )
+scale = Vector2( 1.28703, 0.983474 )
 texture = ExtResource( 5 )
 offset = Vector2( 4.1001, 20.2762 )
 
@@ -113,22 +113,22 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 144.759, 147.137 )
+position = Vector2( 1.29001, -0.299461 )
 rotation = -3.93931e-08
 frames = SubResource( 3 )
 animation = "Moving"
-offset = Vector2( -5.64526, -21.6229 )
+offset = Vector2( 137.824, 125.814 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 138, 140 )
-rotation = -2.38488
+position = Vector2( 138, 130.476 )
 shape = SubResource( 4 )
 
 [node name="Bat" type="Area2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Bat"]
-position = Vector2( 901.419, 273.518 )
+position = Vector2( 1002.08, 963.202 )
 frames = SubResource( 5 )
+offset = Vector2( -100.665, -689.684 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bat"]
 [connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
