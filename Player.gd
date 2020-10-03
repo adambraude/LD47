@@ -2,14 +2,12 @@ extends Area2D
 
 signal hit
 
-export var speed = 400
+export var speed = 400 # speed of the car
 var screen_size
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+# Declare member variables here.
+var leftBound = .15 #The left boundary of where the car can move
+var rightBound = .75 # The right boundary of where the car can move
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,7 +31,7 @@ func _process(delta):
 	else:
 		$AnimatedSprite.stop()
 	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
+	position.x = clamp(position.x, screen_size.x*leftBound, screen_size.x*rightBound)
 	position.y = clamp(position.y, 0, screen_size.y)
 	
 	if velocity.x != 0:
