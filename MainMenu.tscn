@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://testbutton.gd" type="Script" id=1]
+[ext_resource path="res://Label.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 132.21
+margin_top = 46.2226
+margin_right = 537.21
+margin_bottom = 272.223
+text = "Hello World"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 20.0409
+margin_top = 1.1433
+margin_right = 124.041
+margin_bottom = 95.1433
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 6.0963
+margin_top = 14.3808
+margin_right = 97.0963
+margin_bottom = 32.3808
+text = "This Is a Label"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 15.1567
+margin_top = 42.9166
+margin_right = 86.1567
+margin_bottom = 82.9166
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/Button"]
+margin_left = 4.50395
+margin_top = 12.92
+margin_right = 63.504
+margin_bottom = 31.92
+text = "Press Me"
+[connection signal="pressed" from="Panel/Button" to="Panel" method="_on_Button_pressed"]
