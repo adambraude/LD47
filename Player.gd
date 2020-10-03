@@ -19,8 +19,14 @@ func _process(delta):
 	var velocity = Vector2() # Player's movement vector
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
+	else:
+		if Input.is_key_pressed(KEY_D):
+			velocity.x += 1
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
+	else:
+		if Input.is_key_pressed(KEY_A):
+			velocity.x -= 1
 	#if Input.is_action_pressed("ui_down"):
 	#	velocity.y += 1
 	#if Input.is_action_pressed("ui_up"):
