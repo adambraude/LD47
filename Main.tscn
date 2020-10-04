@@ -13,7 +13,7 @@ BatEnemy = ExtResource( 3 )
 script = null
 
 [node name="Road" parent="Background/ParallaxLayer" index="1"]
-frame = 1
+frame = 3
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 2.0
