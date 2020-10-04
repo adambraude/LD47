@@ -54,7 +54,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 78.2761, 43.5581 )
+extents = Vector2( 83.3474, 46.9377 )
 
 [node name="BatEnemy" type="RigidBody2D" groups=[
 "bats",
@@ -68,7 +68,8 @@ frames = SubResource( 1 )
 animation = "Attack"
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2( -0.522705, -1.3923 )
+position = Vector2( -8.01428, -1.3923 )
 shape = SubResource( 2 )
 
 [node name="Attack Cool Down" type="Timer" parent="."]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

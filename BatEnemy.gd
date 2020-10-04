@@ -1,5 +1,8 @@
 extends RigidBody2D
 
+#export (PackedScene) var Fireball
+var fireball
+
 # Declares viable spawn box for bat
 var spawnxLeft = 225
 var spawnxRight = 1700
@@ -12,15 +15,20 @@ var spawnHeight = spawnyDown - spawnyUp
 
 var spawn = Vector2()
 
+var attacked = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimatedSprite.play("Flap")
 	attackWait()
 
 func attackWait():
+	$AnimatedSprite.play("Flap")
+	
+	var attacked = false
 	var timer = Timer.new()
 	
-	var wait = randf()*2+1
+	# Wait on attack is 2-5 seconds
+	var wait = randf()*3+2
 	timer.set_wait_time(wait)
 	
 	timer.set_one_shot(true)
@@ -32,6 +40,7 @@ func attackWait():
 	timer.start()
 
 func attack():
+	attacked = true
 	$AnimatedSprite.play("Attack")
 
 func getSpawn():
@@ -43,3 +52,10 @@ func getSpawn():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_AnimatedSprite_animation_finished():
+	if attacked == true:
+	#	fireball.position = spawn
+	#	add_child(fireball)
+		attackWait()
