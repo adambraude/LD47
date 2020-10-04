@@ -13,11 +13,14 @@ script = ExtResource( 12 )
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="Road" parent="Background" index="2"]
-frame = 1
+frame = 3
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 866.523, 839.91 )
 collision_layer = 2147483649
+
+[node name="RigidBody2D" parent="Player" index="0"]
+position = Vector2( 3.77539, 3.77551 )
 
 [node name="AnimatedSprite" parent="Player" index="2"]
 position = Vector2( 137.193, 128.906 )
@@ -36,6 +39,9 @@ margin_left = 103.504
 margin_top = 70.1907
 margin_right = 408.504
 margin_bottom = 111.191
+[connection signal="hit" from="Player" to="Player" method="take_damage"]
+[connection signal="changed" from="Player/Health" to="HealthBar" method="set_value"]
+[connection signal="max_changed" from="Player/Health" to="HealthBar" method="set_max"]
 
 [editable path="Background"]
 
