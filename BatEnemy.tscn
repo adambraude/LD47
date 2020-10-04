@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/felbat_null.png" type="Texture" id=1]
 [ext_resource path="res://BatEnemy.gd" type="Script" id=2]
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -11,10 +11,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 821.124, 183.402 )
-
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 78.2761, 43.5581 )
 
 [node name="BatEnemy" type="RigidBody2D"]
@@ -24,13 +21,9 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 862.393, 267.921 )
-frames = SubResource( 5 )
+frames = SubResource( 1 )
 offset = Vector2( -8.59576, -3.92712 )
-
-[node name="SpawnBox" type="CollisionShape2D" parent="."]
-position = Vector2( 985.521, 220.003 )
-shape = SubResource( 7 )
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2( 854.794, 263.509 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
