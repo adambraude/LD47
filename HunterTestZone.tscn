@@ -4,13 +4,16 @@
 [ext_resource path="res://BatEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fireball.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Health.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game.gd" type="Script" id=12]
 
 [node name="TestGame" type="Node2D"]
 script = ExtResource( 12 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="Road" parent="Background" index="2"]
+frame = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 866.523, 839.91 )
@@ -28,8 +31,11 @@ contacts_reported = 100
 contact_monitor = true
 can_sleep = false
 
-[node name="Node" parent="." instance=ExtResource( 5 )]
-max_amount = null
+[node name="HealthBar" parent="." instance=ExtResource( 6 )]
+margin_left = 103.504
+margin_top = 70.1907
+margin_right = 408.504
+margin_bottom = 111.191
 
 [editable path="Background"]
 

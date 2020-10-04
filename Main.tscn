@@ -12,6 +12,7 @@ script = ExtResource( 4 )
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
 [node name="Road" parent="Background" index="2"]
+
 frame = 2
 
 [node name="MobTimer" type="Timer" parent="."]
