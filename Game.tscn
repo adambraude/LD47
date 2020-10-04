@@ -1,13 +1,10 @@
-
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://PlayerDone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://BatEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=3]
-
 [ext_resource path="res://CrabEnemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://EnemySpawner.tscn" type="PackedScene" id=5]
-
 [ext_resource path="res://Game.gd" type="Script" id=12]
 
 [node name="TestGame" type="Node2D"]
@@ -16,9 +13,7 @@ script = ExtResource( 12 )
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="Road" parent="Background" index="2"]
-
-frame = 1
-
+frame = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 866.523, 839.91 )
@@ -31,7 +26,6 @@ offset = Vector2( 1.92105, -3.39138 )
 [node name="CrabEnemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1007.06, 226.201 )
 
-
 [node name="BatEnemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 775.527, 266.985 )
 
@@ -41,4 +35,4 @@ position = Vector2( 775.527, 266.985 )
 
 [editable path="Player"]
 
-[editable path="Fireball"]
+[editable path="BatEnemy"]

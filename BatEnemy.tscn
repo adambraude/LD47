@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://assets/Armature_felbat_flap_12.png" type="Texture" id=1]
 [ext_resource path="res://BatEnemy.gd" type="Script" id=2]
@@ -54,24 +54,58 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="Animation" id=4]
+resource_name = "spawning"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.68176, 0 ), Vector2( 810.624, 1.68179 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 83.3474, 46.9377 )
 
 [node name="BatEnemy" type="RigidBody2D" groups=[
 "bats",
 ]]
+position = Vector2( 1.68176, 0 )
 collision_layer = 0
 gravity_scale = 0.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 Fireball = ExtResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Attack"
 
+[node name="Spawn" type="AnimationPlayer" parent="AnimatedSprite"]
+anims/spawning = SubResource( 4 )
+
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2( -8.01428, -1.3923 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Attack Cool Down" type="Timer" parent="."]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

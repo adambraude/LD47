@@ -14,14 +14,9 @@ var spawnHeight = SPAWNYDOWN - SPAWNYUP
 
 var spawn = Vector2()
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-# Handles spawning in enemies on what time
-func run():
-	pass
 
 func getSpawn():
 	# Find a spawning location that is allowed by the bat
@@ -35,17 +30,17 @@ func getSpawn():
 
 
 func _on_StartTimer_timeout():
-	$MobTimer.start()
+	$BatEnemyTimer.start()
 
 
-func _on_MobTimer_timeout():
+func _on_BatEnemyTimer_timeout():
 	# Add a new Bat instance
 	var bat = BatEnemy.instance()
 	add_child(bat)
 	
-	# Find a spawning location that is allowed by the bat
-	var spawn = getSpawn()
+	# Find a spawning location that is allowed by the bat, and sets position to it
+	var spawnin = getSpawn()
+	bat.position = spawn
 	
-	# set location to viable location
-	bat.position.x = spawn.x
-	bat.position.y = spawn.y
+	# should handle the bat moving position. Currently broken
+	#bat.spawn(getSpawn())

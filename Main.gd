@@ -14,7 +14,7 @@ func _ready():
 
 
 func game_over():
-	$MobTimer.stop()
+	$EnemySpawner/BatEnemyTimer.stop()
 	get_tree().call_group("bats", "queue_free")
 	
 func new_game():
