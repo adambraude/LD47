@@ -1,22 +1,17 @@
 extends RigidBody2D
 
-export (PackedScene) var Fireball
-var fireball
 
-# Declares viable spawn box for bat
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 
-# Finds range of acceptable spawns
-
-var spawn = Vector2()
-
-var attacked = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	attackWait()
 
 func attackWait():
-	$AnimatedSprite.play("Flap")
+	$AnimatedSprite.play("Idle")
 	
 	#var attacked = false
 	var timer = Timer.new()
@@ -32,19 +27,9 @@ func attackWait():
 	add_child(timer)
 	
 	timer.start()
-	fireball = Fireball.instance()
+	#fireball = Fireball.instance()
 
-func attack():
-	attacked = true
-	$AnimatedSprite.play("Attack")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func _on_AnimatedSprite_animation_finished():
-	if attacked == true:
-		attacked = false
-		fireball.position = $AnimatedSprite.position
-		add_child(fireball)
-		attackWait()

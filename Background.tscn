@@ -109,14 +109,14 @@ animations = [ {
 "name": "RoadUnRight",
 "speed": 48.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 28 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 30 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 16 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "RoadGoRight",
-"speed": 48.0
-}, {
 "frames": [ ExtResource( 35 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 49 ), ExtResource( 43 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 47 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 42 ), ExtResource( 31 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 36 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 58 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 18 ) ],
 "loop": false,
 "name": "RoadTurnRight",
+"speed": 48.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 28 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 30 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 16 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "RoadGoRight",
 "speed": 48.0
 } ]
 
@@ -155,10 +155,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 4, 6.8, 8.5, 11.8 ),
+"times": PoolRealArray( 4, 6, 9.2, 11 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ -415, 0, 415, 0 ]
+"values": [ -890, 10, 900, 10 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -215,7 +215,6 @@ position = Vector2( 960, 724.711 )
 scale = Vector2( 1, 1.00565 )
 frames = SubResource( 1 )
 animation = "Road"
-frame = 2
 playing = true
 
 [node name="TrackAnimator" type="AnimationPlayer" parent="Road"]
