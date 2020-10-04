@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=99 format=2]
 
 [ext_resource path="res://ParallaxLayer.gd" type="Script" id=1]
 [ext_resource path="res://Background.gd" type="Script" id=2]
@@ -58,9 +58,51 @@
 [ext_resource path="res://assets/Road_right1_18.png" type="Texture" id=56]
 [ext_resource path="res://assets/Road_right1_14.png" type="Texture" id=57]
 [ext_resource path="res://assets/Road_right1_24.png" type="Texture" id=58]
+[ext_resource path="res://assets/Road_unright_07.png" type="Texture" id=59]
+[ext_resource path="res://assets/Road_unright_14.png" type="Texture" id=60]
+[ext_resource path="res://assets/Road_unright_10.png" type="Texture" id=61]
+[ext_resource path="res://assets/Road_unright_24.png" type="Texture" id=62]
+[ext_resource path="res://assets/Road_unright_22.png" type="Texture" id=63]
+[ext_resource path="res://assets/Road_unright_04.png" type="Texture" id=64]
+[ext_resource path="res://assets/Road_unright_20.png" type="Texture" id=65]
+[ext_resource path="res://assets/Road_unright_32.png" type="Texture" id=66]
+[ext_resource path="res://assets/Road_unright_25.png" type="Texture" id=67]
+[ext_resource path="res://assets/Road_unright_17.png" type="Texture" id=68]
+[ext_resource path="res://assets/Road_unright_19.png" type="Texture" id=69]
+[ext_resource path="res://assets/Road_unright_02.png" type="Texture" id=70]
+[ext_resource path="res://assets/Road_unright_11.png" type="Texture" id=71]
+[ext_resource path="res://assets/Road_unright_26.png" type="Texture" id=72]
+[ext_resource path="res://assets/Road_unright_30.png" type="Texture" id=73]
+[ext_resource path="res://assets/Road_unright_34.png" type="Texture" id=74]
+[ext_resource path="res://assets/Road_unright_09.png" type="Texture" id=75]
+[ext_resource path="res://assets/Road_unright_13.png" type="Texture" id=76]
+[ext_resource path="res://assets/Road_unright_08.png" type="Texture" id=77]
+[ext_resource path="res://assets/Road_unright_05.png" type="Texture" id=78]
+[ext_resource path="res://assets/Road_unright_15.png" type="Texture" id=79]
+[ext_resource path="res://assets/Road_unright_28.png" type="Texture" id=80]
+[ext_resource path="res://assets/Road_unright_21.png" type="Texture" id=81]
+[ext_resource path="res://assets/Road_unright_36.png" type="Texture" id=82]
+[ext_resource path="res://assets/Road_unright_03.png" type="Texture" id=83]
+[ext_resource path="res://assets/Road_unright_29.png" type="Texture" id=84]
+[ext_resource path="res://assets/Road_unright_23.png" type="Texture" id=85]
+[ext_resource path="res://assets/Road_unright_06.png" type="Texture" id=86]
+[ext_resource path="res://assets/Road_unright_33.png" type="Texture" id=87]
+[ext_resource path="res://assets/Road_unright_27.png" type="Texture" id=88]
+[ext_resource path="res://assets/Road_unright_16.png" type="Texture" id=89]
+[ext_resource path="res://assets/Road_unright_18.png" type="Texture" id=90]
+[ext_resource path="res://assets/Road_unright_31.png" type="Texture" id=91]
+[ext_resource path="res://assets/Road_unright_35.png" type="Texture" id=92]
+[ext_resource path="res://assets/Road_unright_01.png" type="Texture" id=93]
+[ext_resource path="res://assets/Road_unright_12.png" type="Texture" id=94]
+[ext_resource path="res://assets/Road_unright_00.png" type="Texture" id=95]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 95 ), ExtResource( 93 ), ExtResource( 70 ), ExtResource( 83 ), ExtResource( 64 ), ExtResource( 78 ), ExtResource( 86 ), ExtResource( 59 ), ExtResource( 77 ), ExtResource( 75 ), ExtResource( 61 ), ExtResource( 71 ), ExtResource( 94 ), ExtResource( 76 ), ExtResource( 60 ), ExtResource( 79 ), ExtResource( 89 ), ExtResource( 68 ), ExtResource( 90 ), ExtResource( 69 ), ExtResource( 65 ), ExtResource( 81 ), ExtResource( 63 ), ExtResource( 85 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 88 ), ExtResource( 80 ), ExtResource( 84 ), ExtResource( 73 ), ExtResource( 91 ), ExtResource( 66 ), ExtResource( 87 ), ExtResource( 74 ), ExtResource( 92 ), ExtResource( 82 ) ],
+"loop": true,
+"name": "RoadUnRight",
+"speed": 48.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Road",
@@ -77,9 +119,10 @@ animations = [ {
 "speed": 48.0
 } ]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Road"
 length = 15.0
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
@@ -87,13 +130,25 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4, 4.75 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 4, 4.75, 6, 6.75, 8.5, 9.25, 11, 11.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "Road", "RoadTurnRight", "RoadGoRight" ]
+"values": [ "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 8.5, 11.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -141,13 +196,12 @@ texture = ExtResource( 8 )
 position = Vector2( 960, 724.711 )
 scale = Vector2( 1, 1.00565 )
 frames = SubResource( 1 )
-animation = "RoadTurnRight"
-frame = 36
+animation = "Road"
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxLayer/Road"]
 method_call_mode = 1
-anims/Road = SubResource( 3 )
+anims/Road = SubResource( 2 )
 
 [node name="Tree" type="Sprite" parent="ParallaxLayer"]
 position = Vector2( -400, 1050 )
@@ -158,4 +212,4 @@ offset = Vector2( 4.1001, 20.2762 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxLayer/Tree"]
 autoplay = "TestAnim"
 method_call_mode = 1
-anims/TestAnim = SubResource( 2 )
+anims/TestAnim = SubResource( 3 )
