@@ -41,24 +41,13 @@ func _on_StartTimer_timeout():
 
 
 func _on_MobTimer_timeout():
-	#Choose a spawn location in the acceptable range
-#	var spawnxLeft = 150
-#	var spawnxRight = 1800
-#	var spawnyUp = 50
-#	var spawnyDown = 400
-#
-#	var spawnWidth = spawnxRight - spawnxLeft
-#	var spawnHeight = spawnyDown - spawnyUp
-#
-#	var spawn = Vector2()
-#	var xLocation
-#	var yLocation
-	
+	# Add a new Bat instance
 	var bat = BatEnemy.instance()
 	add_child(bat)
 	
-	bat.spawn.x = (randf()*bat.spawnWidth + bat.spawnxLeft)
-	bat.spawn.y = (randf()*bat.spawnHeight + bat.spawnyUp)
+	# Find a spawning location that is allowed by the bat
+	var spawn = bat.getSpawn()
 	
-	bat.position.x = bat.spawn.x
-	bat.position.y = bat.spawn.y
+	# set location to viable location
+	bat.position.x = spawn.x
+	bat.position.y = spawn.y

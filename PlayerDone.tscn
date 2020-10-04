@@ -20,18 +20,15 @@ animations = [ {
 extents = Vector2( 63.3024, 64.1042 )
 
 [node name="Player" type="Area2D"]
-position = Vector2( 864.278, 817.461 )
+position = Vector2( -13.722, 7.461 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1.29001, -0.299461 )
+position = Vector2( 140.51, 129.38 )
 rotation = -3.93931e-08
 frames = SubResource( 1 )
 animation = "Moving"
-offset = Vector2( 137.824, 125.814 )
+offset = Vector2( -1.39581, -3.86515 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 138, 130.476 )
