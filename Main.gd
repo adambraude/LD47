@@ -30,6 +30,7 @@ func _ready():
 
 func game_over():
 	$MobTimer.stop()
+	get_tree().call_group("bats", "queue_free")
 	
 func new_game():
 	$Player.start($StartPosition.position)

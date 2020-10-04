@@ -2,7 +2,7 @@ extends Area2D
 
 signal hit
 
-export var speed = 400 # speed of the car
+export var speed = 600 # speed of the car
 var screen_size
 
 # Declare member variables here.

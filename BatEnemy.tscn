@@ -14,7 +14,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 78.2761, 43.5581 )
 
-[node name="BatEnemy" type="RigidBody2D"]
+[node name="BatEnemy" type="RigidBody2D" groups=[
+"bats",
+]]
 collision_layer = 0
 gravity_scale = 0.0
 script = ExtResource( 2 )
@@ -27,3 +29,5 @@ offset = Vector2( -8.59576, -3.92712 )
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2( -0.522705, -1.3923 )
 shape = SubResource( 2 )
+
+[node name="Attack Cool Down" type="Timer" parent="."]
