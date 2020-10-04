@@ -17,16 +17,23 @@ scale = Vector2( 0.402148, 0.241901 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 866.523, 839.91 )
+collision_layer = 2147483649
 
-[node name="AnimatedSprite" parent="Player" index="0"]
+[node name="AnimatedSprite" parent="Player" index="2"]
 position = Vector2( 137.193, 128.906 )
 offset = Vector2( 1.92105, -3.39138 )
 
 [node name="BatEnemy" parent="." instance=ExtResource( 2 )]
 
 [node name="Fireball" parent="." instance=ExtResource( 4 )]
-position = Vector2( 977.528, 216.436 )
+position = Vector2( 982.285, 249.734 )
+collision_layer = 2
+contacts_reported = 100
+contact_monitor = true
+can_sleep = false
 
 [editable path="Background"]
 
 [editable path="Player"]
+
+[editable path="Fireball"]

@@ -49,6 +49,7 @@ func _process(delta):
 
 
 func _on_Player_body_entered(body):
+	print("Player was hit")
 	hide()
 	emit_signal("hit")
 	$CollisionShape2D.set_deferred("disabled", true)
