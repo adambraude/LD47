@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ParallaxLayer.gd" type="Script" id=1]
+[ext_resource path="res://Background.gd" type="Script" id=2]
+[ext_resource path="res://assets/road-st-1.png" type="Texture" id=3]
+[ext_resource path="res://assets/road-st-2.png" type="Texture" id=4]
+[ext_resource path="res://placeholdertree.png" type="Texture" id=5]
+[ext_resource path="res://assets/road-st-0.png" type="Texture" id=6]
+[ext_resource path="res://assets/road-st-3.png" type="Texture" id=7]
+[ext_resource path="res://background.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Road",
+"speed": 30.0
+} ]
+
+[sub_resource type="Animation" id=2]
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 625, 350 ), Vector2( -400, 1050 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.402148, 0.241901 ), Vector2( 2.5, 2 ) ]
+}
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.5, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Background" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 960.944, 538.337 )
+scale = Vector2( 1.00295, 1.0035 )
+texture = ExtResource( 8 )
+
+[node name="Road" type="AnimatedSprite" parent="ParallaxLayer"]
+position = Vector2( 960, 724.711 )
+scale = Vector2( 1, 1.00565 )
+frames = SubResource( 1 )
+animation = "Road"
+
+[node name="Tree" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 192.651, 645.263 )
+scale = Vector2( 1.28703, 0.983474 )
+texture = ExtResource( 5 )
+offset = Vector2( 4.1001, 20.2762 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxLayer/Tree"]
+autoplay = "TestAnim"
+method_call_mode = 1
+anims/TestAnim = SubResource( 2 )
