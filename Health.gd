@@ -18,7 +18,9 @@ func set_max(new_max):
 	max_amount = max(1, new_max) #prevents negative hp
 	emit_signal("max_changed", max_amount)
 	
-	
+func take_damage(damage):
+	var new_health = (current_health - damage)
+	set_current(new_health)
 	
 func set_current(new_value):
 	current_health = new_value
