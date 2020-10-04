@@ -1,0 +1,215 @@
+[gd_scene load_steps=99 format=2]
+
+[ext_resource path="res://ParallaxLayer.gd" type="Script" id=1]
+[ext_resource path="res://Background.gd" type="Script" id=2]
+[ext_resource path="res://assets/road-st-1.png" type="Texture" id=3]
+[ext_resource path="res://assets/road-st-2.png" type="Texture" id=4]
+[ext_resource path="res://placeholdertree.png" type="Texture" id=5]
+[ext_resource path="res://assets/road-st-0.png" type="Texture" id=6]
+[ext_resource path="res://assets/road-st-3.png" type="Texture" id=7]
+[ext_resource path="res://background.png" type="Texture" id=8]
+[ext_resource path="res://assets/Road_right1_29.png" type="Texture" id=9]
+[ext_resource path="res://assets/Road_right1_28.png" type="Texture" id=10]
+[ext_resource path="res://assets/Road_right1_30.png" type="Texture" id=11]
+[ext_resource path="res://assets/Road_right1_31.png" type="Texture" id=12]
+[ext_resource path="res://assets/Road_right1_32.png" type="Texture" id=13]
+[ext_resource path="res://assets/Road_right1_33.png" type="Texture" id=14]
+[ext_resource path="res://assets/Road_right2_05.png" type="Texture" id=15]
+[ext_resource path="res://assets/Road_right2_11.png" type="Texture" id=16]
+[ext_resource path="res://assets/Road_right2_02.png" type="Texture" id=17]
+[ext_resource path="res://assets/Road_right1_36.png" type="Texture" id=18]
+[ext_resource path="res://assets/Road_right2_06.png" type="Texture" id=19]
+[ext_resource path="res://assets/Road_right2_00.png" type="Texture" id=20]
+[ext_resource path="res://assets/Road_right2_03.png" type="Texture" id=21]
+[ext_resource path="res://assets/Road_right2_09.png" type="Texture" id=22]
+[ext_resource path="res://assets/Road_right1_35.png" type="Texture" id=23]
+[ext_resource path="res://assets/Road_right2_07.png" type="Texture" id=24]
+[ext_resource path="res://assets/Road_right2_12.png" type="Texture" id=25]
+[ext_resource path="res://assets/Road_right2_08.png" type="Texture" id=26]
+[ext_resource path="res://assets/Road_right2_10.png" type="Texture" id=27]
+[ext_resource path="res://assets/Road_right2_01.png" type="Texture" id=28]
+[ext_resource path="res://assets/Road_right1_34.png" type="Texture" id=29]
+[ext_resource path="res://assets/Road_right2_04.png" type="Texture" id=30]
+[ext_resource path="res://assets/Road_right1_12.png" type="Texture" id=31]
+[ext_resource path="res://assets/Road_right1_25.png" type="Texture" id=32]
+[ext_resource path="res://assets/Road_right1_26.png" type="Texture" id=33]
+[ext_resource path="res://assets/Road_right1_27.png" type="Texture" id=34]
+[ext_resource path="res://assets/Road_right1_01.png" type="Texture" id=35]
+[ext_resource path="res://assets/Road_right1_17.png" type="Texture" id=36]
+[ext_resource path="res://assets/Road_right1_02.png" type="Texture" id=37]
+[ext_resource path="res://assets/Road_right1_00.png" type="Texture" id=38]
+[ext_resource path="res://assets/Road_right1_05.png" type="Texture" id=39]
+[ext_resource path="res://assets/Road_right1_06.png" type="Texture" id=40]
+[ext_resource path="res://assets/Road_right1_07.png" type="Texture" id=41]
+[ext_resource path="res://assets/Road_right1_11.png" type="Texture" id=42]
+[ext_resource path="res://assets/Road_right1_04.png" type="Texture" id=43]
+[ext_resource path="res://assets/Road_right1_15.png" type="Texture" id=44]
+[ext_resource path="res://assets/Road_right1_16.png" type="Texture" id=45]
+[ext_resource path="res://assets/Road_right1_20.png" type="Texture" id=46]
+[ext_resource path="res://assets/Road_right1_08.png" type="Texture" id=47]
+[ext_resource path="res://assets/Road_right1_21.png" type="Texture" id=48]
+[ext_resource path="res://assets/Road_right1_03.png" type="Texture" id=49]
+[ext_resource path="res://assets/Road_right1_19.png" type="Texture" id=50]
+[ext_resource path="res://assets/Road_right1_22.png" type="Texture" id=51]
+[ext_resource path="res://assets/Road_right1_23.png" type="Texture" id=52]
+[ext_resource path="res://assets/Road_right1_09.png" type="Texture" id=53]
+[ext_resource path="res://assets/Road_right1_10.png" type="Texture" id=54]
+[ext_resource path="res://assets/Road_right1_13.png" type="Texture" id=55]
+[ext_resource path="res://assets/Road_right1_18.png" type="Texture" id=56]
+[ext_resource path="res://assets/Road_right1_14.png" type="Texture" id=57]
+[ext_resource path="res://assets/Road_right1_24.png" type="Texture" id=58]
+[ext_resource path="res://assets/Road_unright_07.png" type="Texture" id=59]
+[ext_resource path="res://assets/Road_unright_14.png" type="Texture" id=60]
+[ext_resource path="res://assets/Road_unright_10.png" type="Texture" id=61]
+[ext_resource path="res://assets/Road_unright_24.png" type="Texture" id=62]
+[ext_resource path="res://assets/Road_unright_22.png" type="Texture" id=63]
+[ext_resource path="res://assets/Road_unright_04.png" type="Texture" id=64]
+[ext_resource path="res://assets/Road_unright_20.png" type="Texture" id=65]
+[ext_resource path="res://assets/Road_unright_32.png" type="Texture" id=66]
+[ext_resource path="res://assets/Road_unright_25.png" type="Texture" id=67]
+[ext_resource path="res://assets/Road_unright_17.png" type="Texture" id=68]
+[ext_resource path="res://assets/Road_unright_19.png" type="Texture" id=69]
+[ext_resource path="res://assets/Road_unright_02.png" type="Texture" id=70]
+[ext_resource path="res://assets/Road_unright_11.png" type="Texture" id=71]
+[ext_resource path="res://assets/Road_unright_26.png" type="Texture" id=72]
+[ext_resource path="res://assets/Road_unright_30.png" type="Texture" id=73]
+[ext_resource path="res://assets/Road_unright_34.png" type="Texture" id=74]
+[ext_resource path="res://assets/Road_unright_09.png" type="Texture" id=75]
+[ext_resource path="res://assets/Road_unright_13.png" type="Texture" id=76]
+[ext_resource path="res://assets/Road_unright_08.png" type="Texture" id=77]
+[ext_resource path="res://assets/Road_unright_05.png" type="Texture" id=78]
+[ext_resource path="res://assets/Road_unright_15.png" type="Texture" id=79]
+[ext_resource path="res://assets/Road_unright_28.png" type="Texture" id=80]
+[ext_resource path="res://assets/Road_unright_21.png" type="Texture" id=81]
+[ext_resource path="res://assets/Road_unright_36.png" type="Texture" id=82]
+[ext_resource path="res://assets/Road_unright_03.png" type="Texture" id=83]
+[ext_resource path="res://assets/Road_unright_29.png" type="Texture" id=84]
+[ext_resource path="res://assets/Road_unright_23.png" type="Texture" id=85]
+[ext_resource path="res://assets/Road_unright_06.png" type="Texture" id=86]
+[ext_resource path="res://assets/Road_unright_33.png" type="Texture" id=87]
+[ext_resource path="res://assets/Road_unright_27.png" type="Texture" id=88]
+[ext_resource path="res://assets/Road_unright_16.png" type="Texture" id=89]
+[ext_resource path="res://assets/Road_unright_18.png" type="Texture" id=90]
+[ext_resource path="res://assets/Road_unright_31.png" type="Texture" id=91]
+[ext_resource path="res://assets/Road_unright_35.png" type="Texture" id=92]
+[ext_resource path="res://assets/Road_unright_01.png" type="Texture" id=93]
+[ext_resource path="res://assets/Road_unright_12.png" type="Texture" id=94]
+[ext_resource path="res://assets/Road_unright_00.png" type="Texture" id=95]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 95 ), ExtResource( 93 ), ExtResource( 70 ), ExtResource( 83 ), ExtResource( 64 ), ExtResource( 78 ), ExtResource( 86 ), ExtResource( 59 ), ExtResource( 77 ), ExtResource( 75 ), ExtResource( 61 ), ExtResource( 71 ), ExtResource( 94 ), ExtResource( 76 ), ExtResource( 60 ), ExtResource( 79 ), ExtResource( 89 ), ExtResource( 68 ), ExtResource( 90 ), ExtResource( 69 ), ExtResource( 65 ), ExtResource( 81 ), ExtResource( 63 ), ExtResource( 85 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 88 ), ExtResource( 80 ), ExtResource( 84 ), ExtResource( 73 ), ExtResource( 91 ), ExtResource( 66 ), ExtResource( 87 ), ExtResource( 74 ), ExtResource( 92 ), ExtResource( 82 ) ],
+"loop": true,
+"name": "RoadUnRight",
+"speed": 48.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Road",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 28 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 30 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 16 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "RoadGoRight",
+"speed": 48.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 49 ), ExtResource( 43 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 47 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 42 ), ExtResource( 31 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 36 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 58 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "RoadTurnRight",
+"speed": 48.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Road"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 4.75, 6, 6.75, 8.5, 9.25, 11, 11.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 8.5, 11.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 625, 350 ), Vector2( -400, 1050 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.402148, 0.241901 ), Vector2( 2.5, 2 ) ]
+}
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.5, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Background" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 960.944, 538.337 )
+scale = Vector2( 1.00295, 1.0035 )
+texture = ExtResource( 8 )
+
+[node name="Road" type="AnimatedSprite" parent="ParallaxLayer"]
+position = Vector2( 960, 724.711 )
+scale = Vector2( 1, 1.00565 )
+frames = SubResource( 1 )
+animation = "Road"
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxLayer/Road"]
+method_call_mode = 1
+anims/Road = SubResource( 2 )
+
+[node name="Tree" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( -400, 1050 )
+scale = Vector2( 2.5, 2 )
+texture = ExtResource( 5 )
+offset = Vector2( 4.1001, 20.2762 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxLayer/Tree"]
+autoplay = "TestAnim"
+method_call_mode = 1
+anims/TestAnim = SubResource( 3 )

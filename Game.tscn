@@ -1,138 +1,22 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://background.png" type="Texture" id=1]
-[ext_resource path="res://assets/felbat_null.png" type="Texture" id=2]
-[ext_resource path="res://Player.gd" type="Script" id=3]
-[ext_resource path="res://placeholdertree.png" type="Texture" id=5]
-[ext_resource path="res://assets/road-st-0.png" type="Texture" id=6]
-[ext_resource path="res://assets/road-st-3.png" type="Texture" id=7]
-[ext_resource path="res://assets/road-st-1.png" type="Texture" id=8]
-[ext_resource path="res://assets/road-st-2.png" type="Texture" id=9]
-[ext_resource path="res://Background.gd" type="Script" id=10]
-[ext_resource path="res://Road.gd" type="Script" id=11]
+[ext_resource path="res://PlayerDone.tscn" type="PackedScene" id=1]
+[ext_resource path="res://BatEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game.gd" type="Script" id=12]
-[ext_resource path="res://ParallaxLayer.gd" type="Script" id=13]
-[ext_resource path="res://assets/car0_base.png" type="Texture" id=14]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Road",
-"speed": 30.0
-} ]
-
-[sub_resource type="Animation" id=2]
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 741.684, 460.839 ), Vector2( 237.101, 1551.14 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.402148, 0.241901 ), Vector2( 2.01, 1.21 ) ]
-}
-
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "Moving",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 113.83, 62.9793 )
-
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[node name="Game" type="Node2D"]
+[node name="TestGame" type="Node2D"]
 script = ExtResource( 12 )
 
-[node name="Background" type="ParallaxBackground" parent="."]
-script = ExtResource( 10 )
+[node name="Background" parent="." instance=ExtResource( 3 )]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
-motion_scale = Vector2( 0.5, 1 )
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 866.523, 839.91 )
 
-[node name="Background" type="Sprite" parent="Background/ParallaxLayer"]
-position = Vector2( 960, 544 )
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="AnimatedSprite" parent="Player" index="0"]
+position = Vector2( 137.193, 128.906 )
+offset = Vector2( 1.92105, -3.39138 )
 
-[node name="Road" type="AnimatedSprite" parent="Background/ParallaxLayer"]
-position = Vector2( 1007.94, 727.103 )
-frames = SubResource( 1 )
-animation = "Road"
-script = ExtResource( 11 )
+[node name="BatEnemy" parent="." instance=ExtResource( 2 )]
 
-[node name="Tree" type="Sprite" parent="Background/ParallaxLayer"]
-position = Vector2( 741.684, 460.839 )
-scale = Vector2( 0.402148, 0.241901 )
-texture = ExtResource( 5 )
-offset = Vector2( 0, -200 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/ParallaxLayer/Tree"]
-autoplay = "TestAnim"
-anims/TestAnim = SubResource( 2 )
-
-[node name="Player" type="Area2D" parent="."]
-position = Vector2( 864.278, 817.461 )
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 144.759, 147.137 )
-rotation = -3.93931e-08
-frames = SubResource( 3 )
-animation = "Moving"
-offset = Vector2( -5.64526, -21.6229 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 138, 140 )
-rotation = -2.38488
-shape = SubResource( 4 )
-
-[node name="Bat" type="Area2D" parent="."]
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Bat"]
-position = Vector2( 901.419, 273.518 )
-frames = SubResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bat"]
-[connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
+[editable path="Player"]
