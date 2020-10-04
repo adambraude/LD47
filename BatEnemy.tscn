@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://assets/Armature_felbat_flap_12.png" type="Texture" id=1]
 [ext_resource path="res://BatEnemy.gd" type="Script" id=2]
@@ -39,6 +39,7 @@
 [ext_resource path="res://assets/Armature_felbat_flap_attack_01.png" type="Texture" id=37]
 [ext_resource path="res://assets/Armature_felbat_flap_attack_17.png" type="Texture" id=38]
 [ext_resource path="res://assets/Armature_felbat_flap_attack_15.png" type="Texture" id=39]
+[ext_resource path="res://Fireball.tscn" type="PackedScene" id=40]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -62,6 +63,7 @@ extents = Vector2( 83.3474, 46.9377 )
 collision_layer = 0
 gravity_scale = 0.0
 script = ExtResource( 2 )
+Fireball = ExtResource( 40 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )

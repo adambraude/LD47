@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-#export (PackedScene) var Fireball
+export (PackedScene) var Fireball
 var fireball
 
 # Declares viable spawn box for bat
@@ -24,7 +24,7 @@ func _ready():
 func attackWait():
 	$AnimatedSprite.play("Flap")
 	
-	var attacked = false
+	#var attacked = false
 	var timer = Timer.new()
 	
 	# Wait on attack is 2-5 seconds
@@ -38,6 +38,7 @@ func attackWait():
 	add_child(timer)
 	
 	timer.start()
+	fireball = Fireball.instance()
 
 func attack():
 	attacked = true
@@ -53,9 +54,9 @@ func getSpawn():
 #func _process(delta):
 #	pass
 
-
 func _on_AnimatedSprite_animation_finished():
 	if attacked == true:
-	#	fireball.position = spawn
-	#	add_child(fireball)
+		attacked = false
+		fireball.position = $AnimatedSprite.position
+		add_child(fireball)
 		attackWait()
