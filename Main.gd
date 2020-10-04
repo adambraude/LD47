@@ -20,3 +20,7 @@ func game_over():
 func new_game():
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+
+
+func _on_Health_depleted():
+	game_over()
