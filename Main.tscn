@@ -10,7 +10,7 @@ script = ExtResource( 4 )
 BatEnemy = ExtResource( 3 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
-script = null
+speed = 10
 
 [node name="Road" parent="Background/ParallaxLayer" index="1"]
 frame = 3
