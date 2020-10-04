@@ -11,9 +11,8 @@ script = ExtResource( 12 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
-[node name="Tree" parent="Background/ParallaxLayer" index="2"]
-position = Vector2( 625, 350 )
-scale = Vector2( 0.402148, 0.241901 )
+[node name="Road" parent="Background" index="2"]
+frame = 2
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 866.523, 839.91 )
@@ -27,7 +26,6 @@ offset = Vector2( 1.92105, -3.39138 )
 
 [node name="Fireball" parent="." instance=ExtResource( 4 )]
 position = Vector2( 982.285, 249.734 )
-collision_layer = 2
 contacts_reported = 100
 contact_monitor = true
 can_sleep = false
