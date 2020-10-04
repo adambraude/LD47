@@ -190,7 +190,6 @@ tracks/1/keys = {
 
 [node name="Background" type="ParallaxBackground"]
 script = ExtResource( 2 )
-speed = -890
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 960.944, 538.337 )
@@ -203,15 +202,14 @@ motion_mirroring = Vector2( 2213, 0 )
 
 [node name="Clouds" type="Sprite" parent="ParallaxLayer2"]
 position = Vector2( 1067.25, 155.844 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 96 )
 
 [node name="Road" type="AnimatedSprite" parent="."]
 position = Vector2( 960, 724.711 )
 scale = Vector2( 1, 1.00565 )
 frames = SubResource( 1 )
-animation = "RoadTurnRight"
-frame = 36
+animation = "Road"
+frame = 3
 playing = true
 
 [node name="TrackAnimator" type="AnimationPlayer" parent="Road"]
@@ -219,8 +217,8 @@ method_call_mode = 1
 anims/Road = SubResource( 2 )
 
 [node name="Tree" type="Sprite" parent="."]
-position = Vector2( -400, 1050 )
-scale = Vector2( 2.5, 2 )
+position = Vector2( 625, 350 )
+scale = Vector2( 0.402148, 0.241901 )
 texture = ExtResource( 5 )
 offset = Vector2( 4.1001, 20.2762 )
 
