@@ -1,17 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/fireball.png" type="Texture" id=1]
+[ext_resource path="res://assets/bloodball-0_0.png" type="Texture" id=1]
 [ext_resource path="res://Fireball.gd" type="Script" id=2]
+[ext_resource path="res://assets/bloodball-0_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/bloodball-0_2.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 61.6366 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "default",
-"speed": 5.0
+"name": "fire",
+"speed": 24.0
 } ]
 
 [node name="Fireball" type="RigidBody2D"]
@@ -29,5 +31,6 @@ shape = SubResource( 1 )
 position = Vector2( -0.370605, 0.296722 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 2 )
+animation = "fire"
 offset = Vector2( 1.78482, -14.4389 )
 [connection signal="body_entered" from="." to="." method="_on_Fireball_body_entered"]
