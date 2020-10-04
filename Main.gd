@@ -47,7 +47,7 @@ func _on_MobTimer_timeout():
 	add_child(bat)
 	
 	# Find a spawning location that is allowed by the bat
-	var spawn = bat.getSpawn()
+	var spawn = $EnemySpawner.getSpawn()
 	
 	# set location to viable location
 	bat.position.x = spawn.x
