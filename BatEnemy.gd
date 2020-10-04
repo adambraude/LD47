@@ -1,10 +1,10 @@
 extends RigidBody2D
 
 # Declares viable spawn box for bat
-var spawnxLeft = 150
-var spawnxRight = 1800
+var spawnxLeft = 225
+var spawnxRight = 1700
 var spawnyUp = 50
-var spawnyDown = 400
+var spawnyDown = 350
 
 # Finds range of acceptable spawns
 var spawnWidth = spawnxRight - spawnxLeft

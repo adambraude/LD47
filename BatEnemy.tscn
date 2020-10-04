@@ -20,10 +20,10 @@ gravity_scale = 0.0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 862.393, 267.921 )
+position = Vector2( 7.07629, 3.01968 )
 frames = SubResource( 1 )
 offset = Vector2( -8.59576, -3.92712 )
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-position = Vector2( 854.794, 263.509 )
+position = Vector2( -0.522705, -1.3923 )
 shape = SubResource( 2 )
