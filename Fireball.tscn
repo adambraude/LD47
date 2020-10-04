@@ -15,10 +15,9 @@ animations = [ {
 } ]
 
 [node name="Fireball" type="RigidBody2D"]
-collision_layer = 0
+collision_layer = 2
 gravity_scale = 0.0
-contact_monitor = true
-linear_velocity = Vector2( 0, 550 )
+linear_velocity = Vector2( 0, 800 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

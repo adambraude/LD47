@@ -12,6 +12,9 @@ BatEnemy = ExtResource( 3 )
 [node name="Background" parent="." instance=ExtResource( 1 )]
 script = null
 
+[node name="Road" parent="Background/ParallaxLayer" index="1"]
+frame = 1
+
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 2.0
 
@@ -28,3 +31,5 @@ rotation = 0.00878105
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="hit" from="Player" to="." method="game_over"]
+
+[editable path="Background"]
