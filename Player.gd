@@ -48,7 +48,8 @@ func _process(delta):
 		$AnimatedSprite.animation = "default"
 
 
-func _on_Player_body_entered(body):
+func _on_Player_body_entered(_body):
+	print("Player was hit")
 	hide()
 	emit_signal("hit")
 	$CollisionShape2D.set_deferred("disabled", true)

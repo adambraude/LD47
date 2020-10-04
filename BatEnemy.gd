@@ -14,7 +14,25 @@ var spawn = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$AnimatedSprite.play("Flap")
+	attackWait()
+
+func attackWait():
+	var timer = Timer.new()
+	
+	var wait = randf()*2+1
+	timer.set_wait_time(wait)
+	
+	timer.set_one_shot(true)
+	
+	timer.connect("timeout", self, "attack")
+	
+	add_child(timer)
+	
+	timer.start()
+
+func attack():
+	$AnimatedSprite.play("Attack")
 
 func getSpawn():
 	# Find a spawning location that is allowed by the bat
