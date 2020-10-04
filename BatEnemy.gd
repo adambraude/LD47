@@ -4,14 +4,8 @@ export (PackedScene) var Fireball
 var fireball
 
 # Declares viable spawn box for bat
-var spawnxLeft = 225
-var spawnxRight = 1700
-var spawnyUp = 50
-var spawnyDown = 350
 
 # Finds range of acceptable spawns
-var spawnWidth = spawnxRight - spawnxLeft
-var spawnHeight = spawnyDown - spawnyUp
 
 var spawn = Vector2()
 
@@ -43,12 +37,6 @@ func attackWait():
 func attack():
 	attacked = true
 	$AnimatedSprite.play("Attack")
-
-func getSpawn():
-	# Find a spawning location that is allowed by the bat
-	spawn.x = (randf()*spawnWidth + spawnxLeft)
-	spawn.y = (randf()*spawnHeight + spawnyUp)
-	return spawn
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
