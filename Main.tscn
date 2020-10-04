@@ -11,8 +11,11 @@ BatEnemy = ExtResource( 3 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
+<<<<<<< HEAD
 [node name="Road" parent="Background" index="2"]
 frame = 0
+=======
+>>>>>>> 5db256940f1d75f00658be54ce716c6d454f924a
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 2.0
