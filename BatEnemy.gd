@@ -11,9 +11,31 @@ var spawn = Vector2()
 
 var attacked = false
 
+func spawn(spawnin):
+	$AnimatedSprite.play("Flap")
+	#bat starts at far left of screen at spawn y value
+	var start = spawnin
+	start.x = 0
+	position = start
+	
+	
+	var track_index = $AnimatedSprite/Spawn.add_track(Animation.TYPE_VALUE)
+	$AnimatedSprite/Spawn.track_set_path(track_index, "BatEnemy:position:x")
+	$AnimatedSprite/Spawn.track_insert_key(track_index, 0.0, 0)
+	$AnimatedSprite/Spawn.track_insert_key(track_index, 0.5, start.x)
+	
+	# Enemy moves right to given spawn x location in .5 seconds
+#	var track_index = $AnimatedSprite/AnimationPlayer.add_track(Animation.TYPE_VALUE)
+#	$AnimatedSprite/AnimationPlayer.track_set_path(track_index, 0.0, 0)
+#	$AnimatedSprite/AnimationPlayer.track_insert_key(track_index, .5, spawn.x)
+	
+	# Moves into attack cycle
+	attackWait()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	attackWait()
+	#pass
 
 func attackWait():
 	$AnimatedSprite.play("Flap")

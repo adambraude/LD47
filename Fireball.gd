@@ -16,7 +16,7 @@ func _ready():
 #	pass
 
 
-func _on_Fireball_body_entered(body):
+func _on_Fireball_body_entered(_body):
 	#print("Fireball connected")
 	hide()
 	$CollisionShape2D.set_deferred("disabled", true)
