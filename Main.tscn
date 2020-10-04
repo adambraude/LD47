@@ -10,7 +10,7 @@ script = ExtResource( 4 )
 BatEnemy = ExtResource( 3 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
-script = null
+speed = 10
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 2.0
