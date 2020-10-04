@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/crab_null.png" type="Texture" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="CrabEnemy" type="RigidBody2D"]
+position = Vector2( 38.6812, 31.954 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -37.8015, -45.5029 )
+frames = SubResource( 1 )
+offset = Vector2( 22.6825, 11.8459 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -28.0316, -32.7036 )
+polygon = PoolVector2Array( -41.2717, 85.1855, -55.955, 13.1042, -34.5975, -86.3414, 48.83, -70.9908, 82.201, -46.2962, 67.5178, -24.9388, 7.44995, -4.24878, 24.8029, 70.5023 )
