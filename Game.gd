@@ -1,12 +1,10 @@
 extends Node2D
 
-# Declare member variables here. Examples:
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var player_health = $Player/Health
+	var healthbar = $HealthBar
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#pass
+	player_health.connect("changed", healthbar, "set_value")
+	player_health.connect("max_changed", healthbar, "set_max")
+	player_health.initialize()

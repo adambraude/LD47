@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/car0_base.png" type="Texture" id=2]
+[ext_resource path="res://Health.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 63.3024, 64.1042 )
@@ -41,4 +42,6 @@ rotation = -3.93931e-08
 frames = SubResource( 2 )
 animation = "Moving"
 offset = Vector2( -1.39581, -3.86515 )
+
+[node name="Health" parent="." instance=ExtResource( 3 )]
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
