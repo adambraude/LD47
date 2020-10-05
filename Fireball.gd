@@ -5,7 +5,7 @@ extends Area2D
 # var a = 2
 # var b = "text"
 
-
+var explosionScene = load("res://Explosion.tscn")
 export var velocity = 0
 export var direction = PI/2
 export var drag = 0
@@ -25,6 +25,10 @@ func _process(delta):
 	pass
 
 func die():
+	var explosion = explosionScene.instance()
+	explosion.play("fireball")
+	explosion.position = self.global_position
+	get_node("/root/").add_child(explosion)
 	queue_free()
 
 func _on_VisibilityNotifier2D_screen_exited():
