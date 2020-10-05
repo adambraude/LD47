@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/car0_base.png" type="Texture" id=2]
 [ext_resource path="res://Health.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Gun.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 63.3024, 64.1042 )
@@ -43,4 +44,7 @@ animation = "Moving"
 offset = Vector2( -1.39581, -3.86515 )
 
 [node name="Health" parent="." instance=ExtResource( 3 )]
+
+[node name="Gun" parent="." instance=ExtResource( 4 )]
+position = Vector2( -61.9792, -103.09 )
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]

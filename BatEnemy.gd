@@ -93,3 +93,10 @@ func _on_Health_depleted():
 	queue_free()
 	
 	pass # Replace with function body.
+
+
+func _on_BatEnemy_body_shape_entered(body_id, body, body_shape, local_shape):
+	print("Bat was hit")
+	#emit_signal("hit")
+	$Health.take_damage(1)
+	pass # Replace with function body.

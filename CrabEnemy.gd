@@ -75,3 +75,17 @@ func _on_Player_body_entered(_body):
 	#$CollisionShape2D.set_deferred("disabled", true)
 func _on_Health_depleted():
 	queue_free()
+
+
+func _on_CrabEnemy_body_shape_entered(body_id, body, body_shape, local_shape):
+	print("crab was hit")
+	#emit_signal("hit")
+	$Health.take_damage(1)
+	pass # Replace with function body.
+
+
+func _on_CrabEnemy_body_entered(body):
+	print("crab was hit")
+	#emit_signal("hit")
+	$Health.take_damage(1)
+	pass # Replace with function body.
