@@ -8,12 +8,16 @@
 script = ExtResource( 1 )
 Boss2 = ExtResource( 3 )
 
+[node name="delayTime" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [node name="boss2Wait" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 45.0
 one_shot = true
 
 [node name="bossScreenTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 7.0
 one_shot = true
 
 [node name="BossScreen" type="Sprite" parent="."]
@@ -23,5 +27,6 @@ centered = false
 
 [node name="bossSpawn" type="Position2D" parent="."]
 position = Vector2( 945, 300 )
+[connection signal="timeout" from="delayTime" to="." method="_on_delayTime_timeout"]
 [connection signal="timeout" from="boss2Wait" to="." method="_on_boss2Wait_timeout"]
 [connection signal="timeout" from="bossScreenTimer" to="." method="_on_bossScreenTimer_timeout"]

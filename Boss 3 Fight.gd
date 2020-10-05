@@ -12,8 +12,7 @@ func _ready():
 	pass # Replace with function body.
 
 func startBossTimer():
-	$boss3Wait.start()
-	get_tree().get_root().get_node("Main").find_node("EnemySpawner").startSpawns()
+	$delayTime.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -33,3 +32,8 @@ func _on_bossScreenTimer_timeout():
 	var boss = Boss3.instance()
 	boss.position = $bossSpawn.position
 	add_child(boss)
+
+
+func _on_delayTime_timeout():
+	$boss3Wait.start()
+	get_tree().get_root().get_node("Main").find_node("EnemySpawner").startSpawns()

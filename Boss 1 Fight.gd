@@ -26,6 +26,7 @@ func _on_Time_until_Boss_timeout():
 	$BossScreenTimer.start()
 
 func _on_BossScreenTimer_timeout():
+	$BossScreen.visible = false
 	$BossScreen.queue_free()
 	var boss = Boss1.instance()
 	boss.position = $bossSpawn.position

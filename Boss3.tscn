@@ -120,9 +120,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 12 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 38 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 48 ), ExtResource( 66 ), ExtResource( 45 ), ExtResource( 49 ), ExtResource( 92 ), ExtResource( 89 ), ExtResource( 44 ), ExtResource( 100 ), ExtResource( 90 ), ExtResource( 51 ), ExtResource( 60 ), ExtResource( 67 ), ExtResource( 47 ), ExtResource( 57 ), ExtResource( 104 ), ExtResource( 83 ), ExtResource( 50 ), ExtResource( 55 ), ExtResource( 46 ), ExtResource( 82 ), ExtResource( 52 ) ],
 "loop": true,
-"name": "Idle",
+"name": "Display",
 "speed": 24.0
 }, {
 "frames": [ ExtResource( 65 ), ExtResource( 43 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 112 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 107 ), ExtResource( 111 ), ExtResource( 109 ), ExtResource( 115 ), ExtResource( 117 ), ExtResource( 116 ) ],
@@ -130,41 +130,41 @@ animations = [ {
 "name": "Yeet",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 38 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 48 ), ExtResource( 66 ), ExtResource( 45 ), ExtResource( 49 ), ExtResource( 92 ), ExtResource( 89 ), ExtResource( 44 ), ExtResource( 100 ), ExtResource( 90 ), ExtResource( 51 ), ExtResource( 60 ), ExtResource( 67 ), ExtResource( 47 ), ExtResource( 57 ), ExtResource( 104 ), ExtResource( 83 ), ExtResource( 50 ), ExtResource( 55 ), ExtResource( 46 ), ExtResource( 82 ), ExtResource( 52 ) ],
-"loop": true,
-"name": "Display",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 91 ), ExtResource( 105 ), ExtResource( 84 ), ExtResource( 101 ), ExtResource( 93 ), ExtResource( 68 ), ExtResource( 85 ), ExtResource( 58 ), ExtResource( 53 ), ExtResource( 64 ), ExtResource( 94 ), ExtResource( 59 ), ExtResource( 54 ), ExtResource( 106 ), ExtResource( 56 ), ExtResource( 61 ), ExtResource( 98 ), ExtResource( 102 ), ExtResource( 96 ), ExtResource( 62 ), ExtResource( 87 ), ExtResource( 86 ), ExtResource( 63 ), ExtResource( 69 ), ExtResource( 103 ), ExtResource( 88 ), ExtResource( 97 ), ExtResource( 78 ), ExtResource( 95 ), ExtResource( 79 ), ExtResource( 99 ) ],
 "loop": true,
 "name": "Gesture",
 "speed": 24.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 12 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 24.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 33.0633, 78.8571 )
+extents = Vector2( 33.0633, 78.0828 )
 
 [node name="Boss3" type="Area2D"]
+position = Vector2( -0.89093, 0.8909 )
 collision_layer = 0
 collision_mask = 257
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Yeet"
-frame = 5
+animation = "Idle"
 
 [node name="EnemyHitBox" type="CollisionShape2D" parent="."]
-position = Vector2( 4.4097, 10.7093 )
+position = Vector2( 3.95063, 14.7259 )
 shape = SubResource( 2 )
 
 [node name="Health" parent="." instance=ExtResource( 23 )]
 max_amount = 3000
 
 [node name="HealthBar" parent="." instance=ExtResource( 24 )]
-margin_left = -146.304
-margin_top = -157.627
-margin_right = 158.696
-margin_bottom = -116.627
+margin_left = -150.888
+margin_top = -157.663
+margin_right = 154.112
+margin_bottom = -116.663
 [connection signal="area_entered" from="." to="." method="_on_Boss3_area_entered"]
 [connection signal="depleted" from="Health" to="." method="_on_Health_depleted"]

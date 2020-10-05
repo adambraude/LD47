@@ -39,4 +39,4 @@ func _on_Health_depleted():
 		explosion.play("fireball")
 		explosion.position = self.global_position
 		get_node("/root/").add_child(explosion)
-	get_tree().change_scene("res://test scene.tscn")
+	get_tree().change_scene("res://End of Game Screen.tscn")
