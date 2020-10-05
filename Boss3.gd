@@ -1,5 +1,6 @@
 extends Area2D
 
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -21,7 +22,8 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_Boss1_area_entered(area):
+
+func _on_Boss3_area_entered(area):
 	print("boss was hit")
 	$Health.take_damage(1)
 	if area.has_method("die"):
@@ -30,4 +32,4 @@ func _on_Boss1_area_entered(area):
 
 func _on_Health_depleted():
 	queue_free()
-	get_tree().get_root().get_node("Main").find_node("Boss 2 Fight").startBossTimer()
+	get_tree().change_scene("res://test scene.tscn")

@@ -1,6 +1,6 @@
 extends Node
 
-export (PackedScene) var Boss2
+export (PackedScene) var Boss3
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,11 +12,15 @@ func _ready():
 	pass # Replace with function body.
 
 func startBossTimer():
-	$boss2Wait.start()
+	$boss3Wait.start()
 	get_tree().get_root().get_node("Main").find_node("EnemySpawner").startSpawns()
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
 
-func _on_boss2Wait_timeout():
+
+func _on_boss3Wait_timeout():
 	$BossScreen.visible = true
 	get_tree().get_root().get_node("Main").find_node("Player").find_node("Health").set_current(999)
 	get_tree().get_root().get_node("Main").find_node("EnemySpawner").removeAndStopAll()
@@ -26,6 +30,6 @@ func _on_boss2Wait_timeout():
 
 func _on_bossScreenTimer_timeout():
 	$BossScreen.queue_free()
-	var boss = Boss2.instance()
+	var boss = Boss3.instance()
 	boss.position = $bossSpawn.position
 	add_child(boss)

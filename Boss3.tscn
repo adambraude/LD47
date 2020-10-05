@@ -1,0 +1,167 @@
+[gd_scene load_steps=120 format=2]
+
+[ext_resource path="res://Boss3.gd" type="Script" id=1]
+[ext_resource path="res://assets/Satan_idle_07.png" type="Texture" id=2]
+[ext_resource path="res://assets/Satan_idle_09.png" type="Texture" id=3]
+[ext_resource path="res://assets/Satan_idle_14.png" type="Texture" id=4]
+[ext_resource path="res://assets/Satan_idle_06.png" type="Texture" id=5]
+[ext_resource path="res://assets/Satan_idle_10.png" type="Texture" id=6]
+[ext_resource path="res://assets/Satan_idle_11.png" type="Texture" id=7]
+[ext_resource path="res://assets/Satan_idle_18.png" type="Texture" id=8]
+[ext_resource path="res://assets/Satan_idle_19.png" type="Texture" id=9]
+[ext_resource path="res://assets/Satan_idle_12.png" type="Texture" id=10]
+[ext_resource path="res://assets/Satan_idle_13.png" type="Texture" id=11]
+[ext_resource path="res://assets/Satan_idle_08.png" type="Texture" id=12]
+[ext_resource path="res://assets/Satan_idle_16.png" type="Texture" id=13]
+[ext_resource path="res://assets/Satan_idle_17.png" type="Texture" id=14]
+[ext_resource path="res://assets/Satan_idle_15.png" type="Texture" id=15]
+[ext_resource path="res://assets/Satan_idle_20.png" type="Texture" id=16]
+[ext_resource path="res://assets/Satan_idle_04.png" type="Texture" id=17]
+[ext_resource path="res://assets/Satan_idle_05.png" type="Texture" id=18]
+[ext_resource path="res://assets/Satan_idle_01.png" type="Texture" id=19]
+[ext_resource path="res://assets/Satan_idle_02.png" type="Texture" id=20]
+[ext_resource path="res://assets/Satan_idle_03.png" type="Texture" id=21]
+[ext_resource path="res://assets/Satan_idle_00.png" type="Texture" id=22]
+[ext_resource path="res://Health.tscn" type="PackedScene" id=23]
+[ext_resource path="res://EnemyHealthBar.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/Satan_display_16.png" type="Texture" id=25]
+[ext_resource path="res://assets/Satan_display_15.png" type="Texture" id=26]
+[ext_resource path="res://assets/Satan_display_17.png" type="Texture" id=27]
+[ext_resource path="res://assets/Satan_display_14.png" type="Texture" id=28]
+[ext_resource path="res://assets/Satan_display_05.png" type="Texture" id=29]
+[ext_resource path="res://assets/Satan_display_06.png" type="Texture" id=30]
+[ext_resource path="res://assets/Satan_display_07.png" type="Texture" id=31]
+[ext_resource path="res://assets/Satan_display_08.png" type="Texture" id=32]
+[ext_resource path="res://assets/Satan_display_09.png" type="Texture" id=33]
+[ext_resource path="res://assets/Satan_display_13.png" type="Texture" id=34]
+[ext_resource path="res://assets/Satan_display_10.png" type="Texture" id=35]
+[ext_resource path="res://assets/Satan_display_11.png" type="Texture" id=36]
+[ext_resource path="res://assets/Satan_display_12.png" type="Texture" id=37]
+[ext_resource path="res://assets/Satan_display_00.png" type="Texture" id=38]
+[ext_resource path="res://assets/Satan_display_02.png" type="Texture" id=39]
+[ext_resource path="res://assets/Satan_display_04.png" type="Texture" id=40]
+[ext_resource path="res://assets/Satan_display_01.png" type="Texture" id=41]
+[ext_resource path="res://assets/Satan_display_03.png" type="Texture" id=42]
+[ext_resource path="res://assets/Satan_yeet_01.png" type="Texture" id=43]
+[ext_resource path="res://assets/Satan_display_26.png" type="Texture" id=44]
+[ext_resource path="res://assets/Satan_display_22.png" type="Texture" id=45]
+[ext_resource path="res://assets/Satan_display_38.png" type="Texture" id=46]
+[ext_resource path="res://assets/Satan_display_32.png" type="Texture" id=47]
+[ext_resource path="res://assets/Satan_display_20.png" type="Texture" id=48]
+[ext_resource path="res://assets/Satan_display_23.png" type="Texture" id=49]
+[ext_resource path="res://assets/Satan_display_36.png" type="Texture" id=50]
+[ext_resource path="res://assets/Satan_display_29.png" type="Texture" id=51]
+[ext_resource path="res://assets/Satan_display_40.png" type="Texture" id=52]
+[ext_resource path="res://assets/Satan_gesture_08.png" type="Texture" id=53]
+[ext_resource path="res://assets/Satan_gesture_12.png" type="Texture" id=54]
+[ext_resource path="res://assets/Satan_display_37.png" type="Texture" id=55]
+[ext_resource path="res://assets/Satan_gesture_14.png" type="Texture" id=56]
+[ext_resource path="res://assets/Satan_display_33.png" type="Texture" id=57]
+[ext_resource path="res://assets/Satan_gesture_07.png" type="Texture" id=58]
+[ext_resource path="res://assets/Satan_gesture_11.png" type="Texture" id=59]
+[ext_resource path="res://assets/Satan_display_30.png" type="Texture" id=60]
+[ext_resource path="res://assets/Satan_gesture_15.png" type="Texture" id=61]
+[ext_resource path="res://assets/Satan_gesture_19.png" type="Texture" id=62]
+[ext_resource path="res://assets/Satan_gesture_22.png" type="Texture" id=63]
+[ext_resource path="res://assets/Satan_gesture_09.png" type="Texture" id=64]
+[ext_resource path="res://assets/Satan_yeet_00.png" type="Texture" id=65]
+[ext_resource path="res://assets/Satan_display_21.png" type="Texture" id=66]
+[ext_resource path="res://assets/Satan_display_31.png" type="Texture" id=67]
+[ext_resource path="res://assets/Satan_gesture_05.png" type="Texture" id=68]
+[ext_resource path="res://assets/Satan_gesture_23.png" type="Texture" id=69]
+[ext_resource path="res://assets/Satan_yeet_02.png" type="Texture" id=70]
+[ext_resource path="res://assets/Satan_yeet_03.png" type="Texture" id=71]
+[ext_resource path="res://assets/Satan_yeet_04.png" type="Texture" id=72]
+[ext_resource path="res://assets/Satan_yeet_05.png" type="Texture" id=73]
+[ext_resource path="res://assets/Satan_yeet_06.png" type="Texture" id=74]
+[ext_resource path="res://assets/Satan_yeet_07.png" type="Texture" id=75]
+[ext_resource path="res://assets/Satan_yeet_08.png" type="Texture" id=76]
+[ext_resource path="res://assets/Satan_yeet_09.png" type="Texture" id=77]
+[ext_resource path="res://assets/Satan_gesture_27.png" type="Texture" id=78]
+[ext_resource path="res://assets/Satan_gesture_29.png" type="Texture" id=79]
+[ext_resource path="res://assets/Satan_yeet_10.png" type="Texture" id=80]
+[ext_resource path="res://assets/Satan_yeet_11.png" type="Texture" id=81]
+[ext_resource path="res://assets/Satan_display_39.png" type="Texture" id=82]
+[ext_resource path="res://assets/Satan_display_35.png" type="Texture" id=83]
+[ext_resource path="res://assets/Satan_gesture_02.png" type="Texture" id=84]
+[ext_resource path="res://assets/Satan_gesture_06.png" type="Texture" id=85]
+[ext_resource path="res://assets/Satan_gesture_21.png" type="Texture" id=86]
+[ext_resource path="res://assets/Satan_gesture_20.png" type="Texture" id=87]
+[ext_resource path="res://assets/Satan_gesture_25.png" type="Texture" id=88]
+[ext_resource path="res://assets/Satan_display_25.png" type="Texture" id=89]
+[ext_resource path="res://assets/Satan_display_28.png" type="Texture" id=90]
+[ext_resource path="res://assets/Satan_gesture_00.png" type="Texture" id=91]
+[ext_resource path="res://assets/Satan_display_24.png" type="Texture" id=92]
+[ext_resource path="res://assets/Satan_gesture_04.png" type="Texture" id=93]
+[ext_resource path="res://assets/Satan_gesture_10.png" type="Texture" id=94]
+[ext_resource path="res://assets/Satan_gesture_28.png" type="Texture" id=95]
+[ext_resource path="res://assets/Satan_gesture_18.png" type="Texture" id=96]
+[ext_resource path="res://assets/Satan_gesture_26.png" type="Texture" id=97]
+[ext_resource path="res://assets/Satan_gesture_16.png" type="Texture" id=98]
+[ext_resource path="res://assets/Satan_gesture_30.png" type="Texture" id=99]
+[ext_resource path="res://assets/Satan_display_27.png" type="Texture" id=100]
+[ext_resource path="res://assets/Satan_gesture_03.png" type="Texture" id=101]
+[ext_resource path="res://assets/Satan_gesture_17.png" type="Texture" id=102]
+[ext_resource path="res://assets/Satan_gesture_24.png" type="Texture" id=103]
+[ext_resource path="res://assets/Satan_display_34.png" type="Texture" id=104]
+[ext_resource path="res://assets/Satan_gesture_01.png" type="Texture" id=105]
+[ext_resource path="res://assets/Satan_gesture_13.png" type="Texture" id=106]
+[ext_resource path="res://assets/Satan_yeet_15.png" type="Texture" id=107]
+[ext_resource path="res://assets/Satan_yeet_13.png" type="Texture" id=108]
+[ext_resource path="res://assets/Satan_yeet_17.png" type="Texture" id=109]
+[ext_resource path="res://assets/Satan_yeet_14.png" type="Texture" id=110]
+[ext_resource path="res://assets/Satan_yeet_16.png" type="Texture" id=111]
+[ext_resource path="res://assets/Satan_yeet_12.png" type="Texture" id=112]
+[ext_resource path="res://assets/Satan_display_18.png" type="Texture" id=113]
+[ext_resource path="res://assets/Satan_display_19.png" type="Texture" id=114]
+[ext_resource path="res://assets/Satan_yeet_18.png" type="Texture" id=115]
+[ext_resource path="res://assets/Satan_yeet_20.png" type="Texture" id=116]
+[ext_resource path="res://assets/Satan_yeet_19.png" type="Texture" id=117]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 12 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 91 ), ExtResource( 105 ), ExtResource( 84 ), ExtResource( 101 ), ExtResource( 93 ), ExtResource( 68 ), ExtResource( 85 ), ExtResource( 58 ), ExtResource( 53 ), ExtResource( 64 ), ExtResource( 94 ), ExtResource( 59 ), ExtResource( 54 ), ExtResource( 106 ), ExtResource( 56 ), ExtResource( 61 ), ExtResource( 98 ), ExtResource( 102 ), ExtResource( 96 ), ExtResource( 62 ), ExtResource( 87 ), ExtResource( 86 ), ExtResource( 63 ), ExtResource( 69 ), ExtResource( 103 ), ExtResource( 88 ), ExtResource( 97 ), ExtResource( 78 ), ExtResource( 95 ), ExtResource( 79 ), ExtResource( 99 ) ],
+"loop": true,
+"name": "Gesture",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 48 ), ExtResource( 66 ), ExtResource( 45 ), ExtResource( 49 ), ExtResource( 92 ), ExtResource( 89 ), ExtResource( 44 ), ExtResource( 100 ), ExtResource( 90 ), ExtResource( 51 ), ExtResource( 60 ), ExtResource( 67 ), ExtResource( 47 ), ExtResource( 57 ), ExtResource( 104 ), ExtResource( 83 ), ExtResource( 50 ), ExtResource( 55 ), ExtResource( 46 ), ExtResource( 82 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "Display",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 43 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 112 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 107 ), ExtResource( 111 ), ExtResource( 109 ), ExtResource( 115 ), ExtResource( 117 ), ExtResource( 116 ) ],
+"loop": true,
+"name": "Yeet",
+"speed": 24.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33.0633, 78.8571 )
+
+[node name="Boss3" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Yeet"
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4.4097, 10.7093 )
+shape = SubResource( 2 )
+
+[node name="Health" parent="." instance=ExtResource( 23 )]
+
+[node name="HealthBar" parent="." instance=ExtResource( 24 )]
+margin_left = -146.304
+margin_top = -157.627
+margin_right = 158.696
+margin_bottom = -116.627
+[connection signal="area_entered" from="." to="." method="_on_Boss3_area_entered"]
+[connection signal="depleted" from="Health" to="." method="_on_Health_depleted"]
