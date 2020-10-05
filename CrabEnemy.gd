@@ -73,3 +73,5 @@ func _on_Player_body_entered(_body):
 	#emit_signal("hit")
 	$Health.take_damage(1)
 	#$CollisionShape2D.set_deferred("disabled", true)
+func _on_Health_depleted():
+	queue_free()
