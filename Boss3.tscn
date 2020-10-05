@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=2]
+[gd_scene load_steps=121 format=2]
 
 [ext_resource path="res://Boss3.gd" type="Script" id=1]
 [ext_resource path="res://assets/Satan_idle_07.png" type="Texture" id=2]
@@ -117,14 +117,10 @@
 [ext_resource path="res://assets/Satan_yeet_18.png" type="Texture" id=115]
 [ext_resource path="res://assets/Satan_yeet_20.png" type="Texture" id=116]
 [ext_resource path="res://assets/Satan_yeet_19.png" type="Texture" id=117]
+[ext_resource path="res://Music/Monster Fight by Sinyells - LZtvE (online-audio-converter.com).wav" type="AudioStream" id=118]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 38 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 48 ), ExtResource( 66 ), ExtResource( 45 ), ExtResource( 49 ), ExtResource( 92 ), ExtResource( 89 ), ExtResource( 44 ), ExtResource( 100 ), ExtResource( 90 ), ExtResource( 51 ), ExtResource( 60 ), ExtResource( 67 ), ExtResource( 47 ), ExtResource( 57 ), ExtResource( 104 ), ExtResource( 83 ), ExtResource( 50 ), ExtResource( 55 ), ExtResource( 46 ), ExtResource( 82 ), ExtResource( 52 ) ],
-"loop": true,
-"name": "Display",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 65 ), ExtResource( 43 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 112 ), ExtResource( 108 ), ExtResource( 110 ), ExtResource( 107 ), ExtResource( 111 ), ExtResource( 109 ), ExtResource( 115 ), ExtResource( 117 ), ExtResource( 116 ) ],
 "loop": true,
 "name": "Yeet",
@@ -138,6 +134,11 @@ animations = [ {
 "frames": [ ExtResource( 22 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 12 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 48 ), ExtResource( 66 ), ExtResource( 45 ), ExtResource( 49 ), ExtResource( 92 ), ExtResource( 89 ), ExtResource( 44 ), ExtResource( 100 ), ExtResource( 90 ), ExtResource( 51 ), ExtResource( 60 ), ExtResource( 67 ), ExtResource( 47 ), ExtResource( 57 ), ExtResource( 104 ), ExtResource( 83 ), ExtResource( 50 ), ExtResource( 55 ), ExtResource( 46 ), ExtResource( 82 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "Display",
 "speed": 24.0
 } ]
 
@@ -166,5 +167,11 @@ margin_left = -150.888
 margin_top = -157.663
 margin_right = 154.112
 margin_bottom = -116.663
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 118 )
+volume_db = -13.0
+autoplay = true
 [connection signal="area_entered" from="." to="." method="_on_Boss3_area_entered"]
 [connection signal="depleted" from="Health" to="." method="_on_Health_depleted"]
+[connection signal="finished" from="BossMusic" to="." method="_on_AudioStreamPlayer_finished"]

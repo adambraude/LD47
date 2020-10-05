@@ -154,11 +154,11 @@ one_shot = true
 wait_time = 1.5
 one_shot = true
 
-[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+[node name="BossMusic" type="AudioStreamPlayer" parent="Boss2"]
 stream = ExtResource( 25 )
 volume_db = -13.0
 autoplay = true
 [connection signal="area_entered" from="Boss2" to="Boss2" method="_on_Boss2_area_entered"]
 [connection signal="depleted" from="Boss2/Health" to="Boss2" method="_on_Health_depleted"]
 [connection signal="depleted" from="Boss2/Health" to="." method="_on_Health_depleted"]
-[connection signal="finished" from="BossMusic" to="Boss2" method="_on_BossMusic_finished"]
+[connection signal="finished" from="Boss2/BossMusic" to="Boss2" method="_on_BossMusic_finished"]
