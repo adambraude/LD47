@@ -67,6 +67,6 @@ func attack():
 func _on_AnimatedSprite_animation_finished():
 	if attacked == true:
 		attacked = false
-		fireball.position = $AnimatedSprite.position
-		add_child(fireball)
+		fireball.position = self.global_position
+		get_node("/root/").add_child(fireball)
 		attackWait()

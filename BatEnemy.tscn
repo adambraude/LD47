@@ -54,7 +54,7 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "spawning"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -101,7 +101,7 @@ frames = SubResource( 1 )
 animation = "Attack"
 
 [node name="Spawn" type="AnimationPlayer" parent="AnimatedSprite"]
-anims/spawning = SubResource( 4 )
+anims/spawning = SubResource( 2 )
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2( -8.01428, -1.3923 )
