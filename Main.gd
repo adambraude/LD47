@@ -16,6 +16,8 @@ func _ready():
 func game_over():
 	$EnemySpawner/BatEnemyTimer.stop()
 	get_tree().call_group("bats", "queue_free")
+	$EnemySpawner/CrabEnemyTimer.stop()
+	get_tree().call_group("crabs", "queue_free")
 	
 func new_game():
 	$Player.start($StartPosition.position)
