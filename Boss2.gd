@@ -90,7 +90,7 @@ func _on_Boss2_area_entered(area):
 
 func _on_Health_depleted():
 	queue_free()
-	for i in range(0, 100):
+	for i in range(0, 20):
 		var explosion = explosionScene.instance()
 		if randi() % 2 == 0:
 			explosion.play("explosion_1")

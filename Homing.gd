@@ -16,7 +16,7 @@ func _process(delta):
 	var targetNode = get_node("/root").find_node(target, true, false)
 	if targetNode == null: 
 		return
-	var attackDir = targetNode.get_parent().position - get_parent().position
+	var attackDir = targetNode.global_position - get_parent().global_position
 	var angle = attackDir.angle()
 	var turnDir = angle - get_parent().direction
 	while turnDir < -PI:

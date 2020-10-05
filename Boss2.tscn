@@ -33,7 +33,7 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 15.7469
 height = 258.217
 
@@ -127,7 +127,7 @@ animation = "Idle"
 
 [node name="EnemyHitBox" type="CollisionShape2D" parent="Boss2"]
 scale = Vector2( 3.93759, 1.28756 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="HealthBar" parent="Boss2" instance=ExtResource( 2 )]
 margin_left = -161.691
