@@ -15,13 +15,17 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func startBossTimer():
+	$"Time until Boss".start()
+
 func _on_Time_until_Boss_timeout():
+	$BossScreen.visible = true
+	get_tree().get_root().get_node("Main").find_node("Player").find_node("Health").set_current(999)
 	get_tree().get_root().get_node("Main").find_node("EnemySpawner").removeAndStopAll()
 	
-	# Method to make boss screen appear here
 	$BossScreenTimer.start()
 
 func _on_BossScreenTimer_timeout():
-	# Remove boss screen here
+	$BossScreen.queue_free()
 	# Spawn boss code here
-	pass # Replace with function body.
+	pass

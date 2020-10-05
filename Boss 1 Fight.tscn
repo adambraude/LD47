@@ -1,14 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Boss 1 Fight.gd" type="Script" id=1]
+[ext_resource path="res://assets/boss-splash-1.png" type="Texture" id=2]
 
 [node name="Boss 1 Fight" type="Node"]
 script = ExtResource( 1 )
 
 [node name="Time until Boss" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 45.0
+one_shot = true
 
-[node name="Boss Screen" type="Sprite" parent="."]
+[node name="BossScreen" type="Sprite" parent="."]
+visible = false
+position = Vector2( 960.863, 541.783 )
+texture = ExtResource( 2 )
 
 [node name="BossScreenTimer" type="Timer" parent="."]
 wait_time = 5.0
