@@ -1,10 +1,31 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Explosion.gd" type="Script" id=1]
 [ext_resource path="res://assets/bb_explosion_0.png" type="Texture" id=2]
 [ext_resource path="res://assets/bb_explosion_1.png" type="Texture" id=3]
 [ext_resource path="res://assets/bb_explosion_2.png" type="Texture" id=4]
 [ext_resource path="res://assets/bb_explosion_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/explosion-1_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/explosion-1_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/explosion-1_5.png" type="Texture" id=8]
+[ext_resource path="res://assets/explosion-1_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/explosion-1_0.png" type="Texture" id=10]
+[ext_resource path="res://assets/explosion-1_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/explosion-1_6.png" type="Texture" id=12]
+[ext_resource path="res://assets/minispark.png" type="Texture" id=13]
+[ext_resource path="res://assets/explosion-2_0.png" type="Texture" id=14]
+[ext_resource path="res://assets/explosion-2_4.png" type="Texture" id=15]
+[ext_resource path="res://assets/explosion-1_7.png" type="Texture" id=16]
+[ext_resource path="res://assets/explosion-2_6.png" type="Texture" id=17]
+[ext_resource path="res://assets/explosion-2_2.png" type="Texture" id=19]
+[ext_resource path="res://assets/explosion-2_1.png" type="Texture" id=21]
+[ext_resource path="res://assets/explosion-2_3.png" type="Texture" id=22]
+[ext_resource path="res://assets/explosion-2_8.png" type="Texture" id=24]
+[ext_resource path="res://assets/explosion-1_8.png" type="Texture" id=25]
+[ext_resource path="res://assets/explosion-1_9.png" type="Texture" id=26]
+[ext_resource path="res://assets/explosion-2_7.png" type="Texture" id=27]
+[ext_resource path="res://assets/explosion-2_5.png" type="Texture" id=28]
+[ext_resource path="res://assets/explosion-2_9.png" type="Texture" id=30]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -12,6 +33,21 @@ animations = [ {
 "loop": true,
 "name": "fireball",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "explosion_1",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 28 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "explosion_2",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "spark",
+"speed": 5.0
 } ]
 
 [node name="Explosion" type="AnimatedSprite"]

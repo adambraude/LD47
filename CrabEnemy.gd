@@ -12,6 +12,7 @@ var attackSpeed= 500
 
 var attackDir = Vector2()
 
+var explosionScene = load("res://Explosion.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -70,6 +71,14 @@ func _on_AnimatedSprite_animation_finished():
 		
 		
 func _on_Health_depleted():
+	var explosion = explosionScene.instance()
+	explosion.scale(1.4,1.4)
+	get_node("/root/").add_child(explosion)
+	if randi() % 2 == 0:
+		explosion.play("explosion1")
+	else:
+		explosion.play("explosion2")
+	explosion.position = self.global_position
 	queue_free()
 
 

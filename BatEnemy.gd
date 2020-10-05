@@ -7,6 +7,7 @@ var fireball
 
 # Finds range of acceptable spawns
 
+var explosionScene = load("res://Explosion.tscn")
 var spawn = Vector2()
 
 var attacked = false
@@ -90,6 +91,13 @@ func set_max(new_max):
 
 
 func _on_Health_depleted():
+	var explosion = explosionScene.instance()
+	if randi() % 2 == 0:
+		explosion.play("explosion_1")
+	else:
+		explosion.play("explosion_2")
+	explosion.position = self.global_position
+	get_node("/root/").add_child(explosion)
 	queue_free()
 	
 	pass # Replace with function body.
