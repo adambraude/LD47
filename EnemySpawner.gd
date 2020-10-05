@@ -1,6 +1,7 @@
 extends Node
 
 export (PackedScene) var BatEnemy
+export (PackedScene) var CrabEnemy
 
 # Declare member variables here. Examples:
 var SPAWNXLEFT = 225
@@ -31,6 +32,7 @@ func getSpawn():
 
 func _on_StartTimer_timeout():
 	$BatEnemyTimer.start()
+	$CrabEnemyTimer.start()
 
 
 func _on_BatEnemyTimer_timeout():
@@ -44,3 +46,11 @@ func _on_BatEnemyTimer_timeout():
 	
 	# should handle the bat moving position. Currently broken
 	#bat.spawn(getSpawn())
+
+
+func _on_CrabEnemyTimer_timeout():
+	var crab = CrabEnemy.instance()
+	add_child(crab)
+	
+	var spawnin = getSpawn()
+	crab.position = spawn
