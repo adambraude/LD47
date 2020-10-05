@@ -10,8 +10,21 @@ script = ExtResource( 12 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 866.523, 839.91 )
+collision_layer = 2147483649
+
+[node name="AnimatedSprite" parent="Player" index="2"]
+position = Vector2( 137.193, 128.906 )
+offset = Vector2( 1.92105, -3.39138 )
+
+[node name="CrabEnemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1007.06, 226.201 )
+
 [node name="Road" parent="Background" index="2"]
 frame = 2
+
 
 [node name="BatEnemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 775.527, 266.985 )

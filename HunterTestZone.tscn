@@ -13,7 +13,7 @@ script = ExtResource( 12 )
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
 [node name="Road" parent="Background" index="2"]
-frame = 3
+frame = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 866.523, 839.91 )

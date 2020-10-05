@@ -19,4 +19,5 @@ func _ready():
 func _on_Fireball_body_entered(_body):
 	#print("Fireball connected")
 	hide()
+	queue_free()
 	$CollisionShape2D.set_deferred("disabled", true)
