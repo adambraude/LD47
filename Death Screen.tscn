@@ -52,9 +52,9 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="Retry" type="Button" parent="Menu/CenterRow/Buttons"]
-margin_top = 351.0
+margin_top = 200.0
 margin_right = 1700.0
-margin_bottom = 501.0
+margin_bottom = 350.0
 rect_min_size = Vector2( 300, 150 )
 flat = true
 script = ExtResource( 3 )
@@ -65,10 +65,10 @@ __meta__ = {
 [node name="Label" type="Label" parent="Menu/CenterRow/Buttons/Retry"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 596.529
-margin_top = -216.213
-margin_right = -597.471
-margin_bottom = -216.213
+margin_left = 592.753
+margin_top = 33.706
+margin_right = -601.246
+margin_bottom = 33.706
 rect_scale = Vector2( 0.996074, 0.982215 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
