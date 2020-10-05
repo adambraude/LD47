@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/wheeler_crackle.png" type="Texture" id=1]
+[ext_resource path="res://WheelEnemy.gd" type="Script" id=2]
+[ext_resource path="res://assets/wheeler_crackle1.png" type="Texture" id=3]
+[ext_resource path="res://assets/wheeler_crackle_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/wheeler.png" type="Texture" id=5]
+[ext_resource path="res://FireballGravy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://EnemyHealthBar.tscn" type="PackedScene" id=41]
+[ext_resource path="res://Health.tscn" type="PackedScene" id=42]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Crackle",
+"speed": 6.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "spawning"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.68176, 0 ), Vector2( 810.624, 1.68179 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 82.3345
+
+[sub_resource type="Animation" id=4]
+resource_name = "Drop"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -400 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EnemyHitBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, -409.392 ), Vector2( 2, -10.406 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ProgressBar:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -40, -474.881 ), Vector2( -40, -74.881 ) ]
+}
+
+[node name="WheelEnemy" type="Area2D" groups=[
+"bats",
+]]
+position = Vector2( 1.68176, 0 )
+collision_layer = 512
+collision_mask = 257
+script = ExtResource( 2 )
+fireball = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Crackle"
+
+[node name="Spawn" type="AnimationPlayer" parent="AnimatedSprite"]
+anims/spawning = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="AnimatedSprite"]
+texture = ExtResource( 5 )
+
+[node name="EnemyHitBox" type="CollisionShape2D" parent="."]
+position = Vector2( 2, -10.406 )
+shape = SubResource( 3 )
+
+[node name="Health" parent="." instance=ExtResource( 42 )]
+max_amount = 80
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Drop = SubResource( 4 )
+
+[node name="ProgressBar" parent="." instance=ExtResource( 41 )]
+margin_left = -40.0
+margin_top = -74.881
+margin_right = 68.0
+margin_bottom = -59.881
+
+[node name="cooldown" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+[connection signal="area_shape_entered" from="." to="." method="_on_WheelEnemy_area_shape_entered"]
+[connection signal="depleted" from="Health" to="." method="_on_Health_depleted"]
+[connection signal="max_changed" from="Health" to="." method="set_max"]
