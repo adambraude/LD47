@@ -52,3 +52,4 @@ margin_bottom = -199.346
 
 [node name="Health" parent="." instance=ExtResource( 22 )]
 [connection signal="area_entered" from="." to="." method="_on_Boss1_area_entered"]
+[connection signal="depleted" from="Health" to="." method="_on_Health_depleted"]

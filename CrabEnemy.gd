@@ -86,4 +86,3 @@ func _on_CrabEnemy_area_shape_entered(area_id, area, area_shape, local_shape):
 	$Health.take_damage(area.damage)
 	if area.has_method("die"):
 		area.die()
-	pass # Replace with function body.

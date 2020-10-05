@@ -94,8 +94,6 @@ func _on_Health_depleted():
 	explosion.position = self.global_position
 	get_node("/root/").add_child(explosion)
 	queue_free()
-	
-	pass # Replace with function body.
 
 func _on_BatEnemy_area_shape_entered(area_id, area, area_shape, self_shape):
 	print("Bat was hit")
@@ -103,4 +101,3 @@ func _on_BatEnemy_area_shape_entered(area_id, area, area_shape, self_shape):
 	$Health.take_damage(area.damage)
 	if area.has_method("die"):
 		area.die()
-	pass # Replace with function body.
