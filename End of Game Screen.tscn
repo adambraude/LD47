@@ -59,9 +59,9 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="Play" type="Button" parent="Menu/CenterRow/Buttons"]
-margin_top = 50.0
+margin_top = 333.0
 margin_right = 1725.0
-margin_bottom = 200.0
+margin_bottom = 483.0
 rect_min_size = Vector2( 300, 150 )
 flat = true
 script = ExtResource( 3 )
