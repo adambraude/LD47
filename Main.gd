@@ -23,6 +23,7 @@ func game_over():
 func new_game():
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+	$"Boss 1 Fight".startBossTimer()
 
 
 func _on_Health_depleted():

@@ -44,6 +44,8 @@ margin_bottom = 107.0
 
 [editable path="Player"]
 
+[editable path="Player/Health"]
+
 [editable path="EnemySpawner"]
 
 [editable path="Boss 1 Fight"]
