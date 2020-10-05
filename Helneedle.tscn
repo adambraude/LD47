@@ -23,15 +23,13 @@ position = Vector2( -1.18921, -90.9743 )
 collision_layer = 2
 script = ExtResource( 2 )
 velocity = 500
-damage = 5
-explosionScale = 0.9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.594604, 69.3239 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.329911, 44.3272 )
+position = Vector2( 0.924515, 42.5434 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 2 )
 animation = "fire"

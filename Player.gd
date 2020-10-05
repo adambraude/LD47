@@ -63,7 +63,7 @@ func start(pos):
 func _on_Player_area_entered(area):
 	print("Player was hit")
 	emit_signal("hit")
-	$Health.take_damage(2)
+	$Health.take_damage(area.damage)
 	if area.has_method("die"):
 		area.die()
 	pass # Replace with function body.

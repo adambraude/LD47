@@ -13,12 +13,12 @@ extents = Vector2( 63.3024, 64.1042 )
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "Moving",
+"name": "default",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "default",
+"name": "Moving",
 "speed": 5.0
 } ]
 
@@ -45,6 +45,7 @@ animation = "Moving"
 offset = Vector2( -1.39581, -3.86515 )
 
 [node name="Health" parent="." instance=ExtResource( 3 )]
+max_amount = 30
 
 [node name="Gun" parent="." instance=ExtResource( 4 )]
 position = Vector2( -61.9792, -103.09 )

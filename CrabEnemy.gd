@@ -1,11 +1,10 @@
 extends Area2D
 
-export (PackedScene) var Fireball
-
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var projectile = load("res://Fireneedle.tscn")
 var fireball
 var attacked = false
 var attackSpeed= 500
@@ -26,6 +25,7 @@ func _ready():
 
 func attackWait():
 	$AnimatedSprite.play("Idle")
+	$AnimatedSprite.move_local_y(33)
 	
 	#var attacked = false
 	var timer = Timer.new()
@@ -41,11 +41,10 @@ func attackWait():
 	add_child(timer)
 	
 	timer.start()
-	
-	fireball = Fireball.instance()
 
 func attack():
 	attacked = true
+	$AnimatedSprite.move_local_y(-33)
 	$AnimatedSprite.play("Attack")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -55,24 +54,24 @@ func attack():
 func _on_AnimatedSprite_animation_finished():
 	if attacked == true:
 		attacked = false
-		fireball.position = self.global_position
 		
 		var localPlayer = get_tree().get_root().get_node("Main").find_node("Player")
 		
-		attackDir = localPlayer.position - fireball.position
+		for i in range(-1, 2, 1):
+			fireball = projectile.instance()
+			fireball.position = $"Fireball Spawn Location".global_position
+			attackDir = localPlayer.position - fireball.position
+			var normAttack = attackDir.normalized()
+			fireball.velocity = (normAttack*attackSpeed).length()
+			fireball.direction = (normAttack*attackSpeed).angle() + PI/64*i
+			get_node("/root/").add_child(fireball)
 		
-		var normAttack = attackDir.normalized()
-		
-		fireball.velocity = (normAttack*attackSpeed).length()
-		fireball.direction = (normAttack*attackSpeed).angle()
-
-		get_node("/root/").add_child(fireball)
 		attackWait()
 		
 		
 func _on_Health_depleted():
 	var explosion = explosionScene.instance()
-	explosion.scale = Vector2(1.5, 1.5)
+	explosion.scale = Vector2(1.1, 1.1)
 	get_node("/root/").add_child(explosion)
 	if randi() % 2 == 0:
 		explosion.play("explosion_1")

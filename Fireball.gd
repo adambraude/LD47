@@ -9,6 +9,9 @@ var explosionScene = load("res://Explosion.tscn")
 export var velocity = 0
 export var direction = PI/2
 export var drag = 0
+export var damage = 6
+export var explosionType = "fireball"
+export var explosionScale = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,7 +30,8 @@ func _process(delta):
 
 func die():
 	var explosion = explosionScene.instance()
-	explosion.play("fireball")
+	explosion.scale = Vector2(explosionScale, explosionScale)
+	explosion.play(explosionType)
 	explosion.position = self.global_position
 	get_node("/root/").add_child(explosion)
 	queue_free()
