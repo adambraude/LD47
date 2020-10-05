@@ -34,6 +34,14 @@ func spawn(spawnin):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var player_health = $Health
+	var healthbar = $ProgressBar
+	
+	player_health.connect("changed", healthbar, "set_value")
+	player_health.connect("max_changed", healthbar, "set_max")
+	player_health.initialize()
+	
+	
 	attackWait()
 	#pass
 
@@ -70,3 +78,18 @@ func _on_AnimatedSprite_animation_finished():
 		fireball.position = $AnimatedSprite.position
 		add_child(fireball)
 		attackWait()
+		
+func _on_Player_body_entered(_body):
+	print("Bat was hit")
+	#emit_signal("hit")
+	$Health.take_damage(1)
+	#$CollisionShape2D.set_deferred("disabled", true)
+
+func set_max(new_max):
+	pass # Replace with function body.
+
+
+func _on_Health_depleted():
+	queue_free()
+	
+	pass # Replace with function body.

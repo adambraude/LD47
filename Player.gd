@@ -50,7 +50,7 @@ func _process(delta):
 
 func _on_Player_body_entered(_body):
 	print("Player was hit")
-	#emit_signal("hit")
+	emit_signal("hit")
 	$Health.take_damage(2)
 	#$CollisionShape2D.set_deferred("disabled", true)
 
