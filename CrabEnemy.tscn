@@ -62,7 +62,7 @@
 [ext_resource path="res://assets/Crab_spell_38.png" type="Texture" id=60]
 [ext_resource path="res://CrabEnemy.gd" type="Script" id=61]
 [ext_resource path="res://Fireball.tscn" type="PackedScene" id=62]
-[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=63]
+[ext_resource path="res://EnemyHealthBar.tscn" type="PackedScene" id=63]
 [ext_resource path="res://Health.tscn" type="PackedScene" id=64]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -105,13 +105,6 @@ shape = SubResource( 2 )
 [node name="Attack Cool Down" type="Timer" parent="."]
 wait_time = 2.5
 
-[node name="Healthbar" parent="." instance=ExtResource( 63 )]
-margin_left = -137.409
-margin_top = -212.57
-margin_right = 149.591
-margin_bottom = -173.57
-rect_scale = Vector2( 0.558608, 0.5117 )
-
 [node name="Fireball" parent="." instance=ExtResource( 62 )]
 
 [node name="Fireball Spawn Location" type="Position2D" parent="."]
@@ -119,8 +112,13 @@ position = Vector2( -59.7035, -211.064 )
 
 [node name="Health" parent="." instance=ExtResource( 64 )]
 max_amount = 100
+
+[node name="Healthbar" parent="." instance=ExtResource( 63 )]
+margin_left = -123.118
+margin_top = -196.929
+margin_right = -7.11774
+margin_bottom = -180.929
 [connection signal="area_shape_entered" from="." to="." method="_on_CrabEnemy_area_shape_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
-[connection signal="changed" from="Healthbar" to="Fireball" method="set_value"]
 [connection signal="changed" from="Health" to="Healthbar" method="set_value"]
 [connection signal="max_changed" from="Health" to="Healthbar" method="set_max"]
