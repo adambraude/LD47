@@ -29,6 +29,12 @@ func getSpawn():
 #func _process(delta):
 #	pass
 
+func removeAndStopAll():
+	$BatEnemyTimer.stop()
+	$CrabEnemyTimer.stop()
+	get_tree().call_group("crabs", "queue_free")
+	get_tree().call_group("bats", "queue_free")
+	get_tree().call_group("fireballs", "queue_free")
 
 func _on_StartTimer_timeout():
 	$BatEnemyTimer.start()
