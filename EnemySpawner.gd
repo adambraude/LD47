@@ -18,6 +18,8 @@ var spawnHeight = SPAWNYDOWN - SPAWNYUP
 
 var spawn = Vector2()
 
+var play = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -33,6 +35,8 @@ func getSpawn():
 #	pass
 
 func startSpawns():
+	play = true
+	$EnemyMusic.play(0)
 	if (difficulty == 0):
 		$BatEnemyTimer.wait_time = 1.5
 		$CrabEnemyTimer.wait_time = 8
@@ -54,6 +58,8 @@ func startSpawns():
 		$WheelEnemyTimer.start()
 
 func removeAndStopAll():
+	play = false
+	$EnemyMusic.stop()
 	$BatEnemyTimer.stop()
 	$CrabEnemyTimer.stop()
 	$WheelEnemyTimer.stop()
@@ -61,6 +67,14 @@ func removeAndStopAll():
 	get_tree().call_group("bats", "queue_free")
 	get_tree().call_group("wheels", "queue_free")
 	get_tree().call_group("fireballs", "queue_free")
+
+func stopMusic():
+	play = false
+	$EnemyMusic.stop()
+
+func startMusic():
+	play = true
+	$EnemyMusic.play(0)
 
 func _on_StartTimer_timeout():
 	startSpawns()
@@ -92,3 +106,8 @@ func _on_WheelEnemyTimer_timeout():
 	
 	var spawnin = getSpawn()
 	wheel.position = spawn
+
+
+func _on_EnemyMusic_finished():
+	if play == true:
+		$EnemyMusic.play(0)

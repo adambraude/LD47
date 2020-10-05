@@ -126,3 +126,7 @@ func _on_Health_depleted():
 		explosion.position += Vector2(rand_range(-200, 200), rand_range(-200, 200))
 		get_node("/root/").add_child(explosion)
 	get_tree().change_scene("res://End of Game Screen.tscn")
+
+
+func _on_AudioStreamPlayer_finished():
+	$BossMusic.play(0)
