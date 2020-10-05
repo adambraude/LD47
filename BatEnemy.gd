@@ -37,7 +37,9 @@ func spawn(spawnin):
 func _ready():
 	var player_health = $Health
 	var healthbar = $ProgressBar
-	
+	$AnimationPlayer.play("Drop")
+	$AnimatedSprite.position[1] -= 400
+	$ProgressBar.rect_position[1] -= 400
 	player_health.connect("changed", healthbar, "set_value")
 	player_health.connect("max_changed", healthbar, "set_max")
 	player_health.initialize()
@@ -98,6 +100,8 @@ func _on_Health_depleted():
 func _on_BatEnemy_area_shape_entered(area_id, area, area_shape, self_shape):
 	print("Bat was hit")
 	#emit_signal("hit")
+	if area == null:
+		return
 	$Health.take_damage(area.damage)
 	if area.has_method("die"):
 		area.die()

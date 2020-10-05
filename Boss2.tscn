@@ -17,13 +17,15 @@ animations = [ {
 extents = Vector2( 154.037, 231.625 )
 
 [node name="Boss2" type="Area2D"]
+collision_layer = 0
+collision_mask = 257
 script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="EnemyHitBox" type="CollisionShape2D" parent="."]
 position = Vector2( -28.0616, 22.4492 )
 shape = SubResource( 2 )
 
@@ -34,5 +36,6 @@ margin_right = 120.633
 margin_bottom = -251.265
 
 [node name="Health" parent="." instance=ExtResource( 1 )]
+max_amount = 1800
 [connection signal="area_entered" from="." to="." method="_on_Boss2_area_entered"]
 [connection signal="depleted" from="Health" to="." method="_on_Health_depleted"]

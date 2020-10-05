@@ -23,8 +23,8 @@
 [ext_resource path="res://EnemyHealthBar.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Health.tscn" type="PackedScene" id=22]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 254.884, 183.782 )
+[sub_resource type="CircleShape2D" id=3]
+radius = 182.116
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -35,10 +35,12 @@ animations = [ {
 } ]
 
 [node name="Boss1" type="Area2D"]
+collision_layer = 0
+collision_mask = 257
 script = ExtResource( 20 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="EnemyHitBox" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
@@ -51,5 +53,6 @@ margin_right = 217.551
 margin_bottom = -199.346
 
 [node name="Health" parent="." instance=ExtResource( 22 )]
+max_amount = 1000
 [connection signal="area_entered" from="." to="." method="_on_Boss1_area_entered"]
 [connection signal="depleted" from="Health" to="." method="_on_Health_depleted"]

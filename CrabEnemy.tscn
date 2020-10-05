@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://assets/Crab_spell_03.png" type="Texture" id=1]
 [ext_resource path="res://assets/Crab_idle_19.png" type="Texture" id=2]
@@ -78,40 +78,81 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 39.4974, 84.3265 )
+extents = Vector2( 28.9628, 60.5089 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Drop"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -400 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EnemyHitBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2.245, -400 ), Vector2( -2.245, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Healthbar:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -59.986, -536.218 ), Vector2( -59.986, -136.218 ) ]
+}
 
 [node name="CrabEnemy" type="Area2D" groups=[
 "crabs",
 ]]
-position = Vector2( 60.0387, 49.9744 )
 collision_layer = 512
 collision_mask = 257
 script = ExtResource( 61 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -59.2021, -50.0856 )
+position = Vector2( 0, -400 )
 frames = SubResource( 1 )
 animation = "Attack"
 offset = Vector2( -1.95476, -26.3718 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -60.8112, -47.3762 )
+[node name="EnemyHitBox" type="CollisionShape2D" parent="."]
+position = Vector2( -2.245, -400 )
 shape = SubResource( 2 )
 
 [node name="Attack Cool Down" type="Timer" parent="."]
 wait_time = 2.5
 
 [node name="Fireball Spawn Location" type="Position2D" parent="."]
-position = Vector2( -59.7035, -211.064 )
+position = Vector2( -2.45789, -193.105 )
 
 [node name="Health" parent="." instance=ExtResource( 64 )]
 max_amount = 60
 
 [node name="Healthbar" parent="." instance=ExtResource( 63 )]
-margin_left = -117.232
-margin_top = -152.361
-margin_right = -1.23145
-margin_bottom = -136.361
+margin_left = -59.986
+margin_top = -505.218
+margin_right = 56.0145
+margin_bottom = -489.218
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Drop = SubResource( 3 )
 [connection signal="area_shape_entered" from="." to="." method="_on_CrabEnemy_area_shape_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="changed" from="Health" to="Healthbar" method="set_value"]

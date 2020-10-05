@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Explosion.gd" type="Script" id=1]
 [ext_resource path="res://assets/bb_explosion_0.png" type="Texture" id=2]
@@ -28,7 +28,18 @@
 [ext_resource path="res://assets/explosion-1_9.png" type="Texture" id=26]
 [ext_resource path="res://assets/explosion-2_7.png" type="Texture" id=27]
 [ext_resource path="res://assets/explosion-2_5.png" type="Texture" id=28]
+[ext_resource path="res://assets/explosion_small_0_6.png" type="Texture" id=29]
 [ext_resource path="res://assets/explosion-2_9.png" type="Texture" id=30]
+[ext_resource path="res://assets/explosion_small_0_7.png" type="Texture" id=31]
+[ext_resource path="res://assets/explosion_small_0_8.png" type="Texture" id=32]
+[ext_resource path="res://assets/explosion_small_0_3.png" type="Texture" id=33]
+[ext_resource path="res://assets/explosion_small_0_9.png" type="Texture" id=34]
+[ext_resource path="res://assets/explosion_small_0_10.png" type="Texture" id=35]
+[ext_resource path="res://assets/explosion_small_0_0.png" type="Texture" id=36]
+[ext_resource path="res://assets/explosion_small_0_2.png" type="Texture" id=37]
+[ext_resource path="res://assets/explosion_small_0_4.png" type="Texture" id=38]
+[ext_resource path="res://assets/explosion_small_0_1.png" type="Texture" id=39]
+[ext_resource path="res://assets/explosion_small_0_5.png" type="Texture" id=40]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -36,6 +47,11 @@ animations = [ {
 "loop": true,
 "name": "fireball",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 39 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "explosion_small",
+"speed": 24.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 18 ), ExtResource( 20 ) ],
 "loop": true,
@@ -47,19 +63,19 @@ animations = [ {
 "name": "explosion_1",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "spark",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 14 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 28 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "explosion_2",
 "speed": 24.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "spark",
+"speed": 5.0
 } ]
 
 [node name="Explosion" type="AnimatedSprite"]
 frames = SubResource( 1 )
-animation = "plasma"
+animation = "explosion_small"
 script = ExtResource( 1 )
 [connection signal="animation_finished" from="." to="." method="_on_Explosion_animation_finished"]

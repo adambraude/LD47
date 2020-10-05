@@ -12,6 +12,11 @@ var rightBound = .84 # The right boundary of where the car can move
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
+	#re-enable these when bosses die
+	$Rockets.hide()
+	$Plasma.hide()
+	$Rockets.set_process(false)
+	$Plasma.set_process(false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://assets/tree1.png" type="Texture" id=1]
 [ext_resource path="res://Background.gd" type="Script" id=2]
@@ -96,6 +96,7 @@
 [ext_resource path="res://assets/Road_unright_12.png" type="Texture" id=94]
 [ext_resource path="res://assets/Road_unright_00.png" type="Texture" id=95]
 [ext_resource path="res://assets/clouds.png" type="Texture" id=96]
+[ext_resource path="res://assets/tree2.png" type="Texture" id=97]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -103,6 +104,11 @@ animations = [ {
 "loop": true,
 "name": "Road",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 95 ), ExtResource( 93 ), ExtResource( 70 ), ExtResource( 83 ), ExtResource( 64 ), ExtResource( 78 ), ExtResource( 86 ), ExtResource( 59 ), ExtResource( 77 ), ExtResource( 75 ), ExtResource( 61 ), ExtResource( 71 ), ExtResource( 94 ), ExtResource( 76 ), ExtResource( 60 ), ExtResource( 79 ), ExtResource( 89 ), ExtResource( 68 ), ExtResource( 90 ), ExtResource( 69 ), ExtResource( 65 ), ExtResource( 81 ), ExtResource( 63 ), ExtResource( 85 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 88 ), ExtResource( 80 ), ExtResource( 84 ), ExtResource( 73 ), ExtResource( 91 ), ExtResource( 66 ), ExtResource( 87 ), ExtResource( 74 ), ExtResource( 92 ), ExtResource( 82 ) ],
+"loop": true,
+"name": "RoadUnRight",
+"speed": 48.0
 }, {
 "frames": [ ExtResource( 35 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 49 ), ExtResource( 43 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 47 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 42 ), ExtResource( 31 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 36 ), ExtResource( 56 ), ExtResource( 50 ), ExtResource( 46 ), ExtResource( 48 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 58 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 18 ) ],
 "loop": false,
@@ -113,16 +119,11 @@ animations = [ {
 "loop": true,
 "name": "RoadGoRight",
 "speed": 48.0
-}, {
-"frames": [ ExtResource( 95 ), ExtResource( 93 ), ExtResource( 70 ), ExtResource( 83 ), ExtResource( 64 ), ExtResource( 78 ), ExtResource( 86 ), ExtResource( 59 ), ExtResource( 77 ), ExtResource( 75 ), ExtResource( 61 ), ExtResource( 71 ), ExtResource( 94 ), ExtResource( 76 ), ExtResource( 60 ), ExtResource( 79 ), ExtResource( 89 ), ExtResource( 68 ), ExtResource( 90 ), ExtResource( 69 ), ExtResource( 65 ), ExtResource( 81 ), ExtResource( 63 ), ExtResource( 85 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 72 ), ExtResource( 88 ), ExtResource( 80 ), ExtResource( 84 ), ExtResource( 73 ), ExtResource( 91 ), ExtResource( 66 ), ExtResource( 87 ), ExtResource( 74 ), ExtResource( 92 ), ExtResource( 82 ) ],
-"loop": true,
-"name": "RoadUnRight",
-"speed": 48.0
 } ]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Road"
-length = 15.0
+length = 60.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -131,10 +132,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4, 4.75, 6, 6.75, 8.5, 9.25, 11, 11.75 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 4, 4.75, 6, 6.75, 8.5, 9.25, 11, 11.75, 13.9, 14.65, 15.9, 16.65, 23.9, 24.65, 25.9, 26.65, 34.9, 35.65, 36.9, 37.65, 45.9, 46.65, 47.9, 48.65 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road" ]
+"values": [ "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road", "RoadTurnRight", "RoadGoRight", "RoadUnRight", "Road" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:flip_h")
@@ -155,10 +156,22 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 4, 6, 9.2, 11 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 4, 6, 9.2, 11, 13.9, 15.9, 23.9, 25.9, 34.9, 36.9, 45.9, 47.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ -890, 10, 900, 10 ]
+"values": [ -425, 0, 425, 0, -425, 0, -425, 0, -425, 0, -425, 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Tree:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -189,8 +202,90 @@ tracks/1/keys = {
 "values": [ Vector2( 0.402148, 0.241901 ), Vector2( 2.5, 2 ) ]
 }
 
+[sub_resource type="Animation" id=4]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 625, 350 ), Vector2( -400, 1050 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.402148, 0.241901 ), Vector2( 2.5, 2 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 625, 350 ), Vector2( -400, 1050 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.402148, 0.241901 ), Vector2( 2.5, 2 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 625, 350 ), Vector2( -400, 1050 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.402148, 0.241901 ), Vector2( 2.5, 2 ) ]
+}
+
 [node name="Background" type="ParallaxBackground"]
 script = ExtResource( 2 )
+speed = 0
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 960.944, 538.337 )
@@ -214,7 +309,7 @@ position = Vector2( 960, 724.711 )
 scale = Vector2( 1, 1.00565 )
 frames = SubResource( 1 )
 animation = "Road"
-frame = 3
+frame = 1
 playing = true
 
 [node name="TrackAnimator" type="AnimationPlayer" parent="Road"]
@@ -222,12 +317,48 @@ method_call_mode = 1
 anims/Road = SubResource( 2 )
 
 [node name="Tree" type="Sprite" parent="."]
-position = Vector2( 625, 350 )
-scale = Vector2( 0.402148, 0.241901 )
-texture = ExtResource( 1 )
+position = Vector2( -400, 1050 )
+scale = Vector2( 2.5, 2 )
+texture = ExtResource( 97 )
 offset = Vector2( 4.1001, 20.2762 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Tree"]
+[node name="Tree1a" type="AnimationPlayer" parent="Tree"]
 autoplay = "TestAnim"
 method_call_mode = 1
 anims/TestAnim = SubResource( 3 )
+
+[node name="Tree2" type="Sprite" parent="."]
+visible = false
+position = Vector2( -400, 1050 )
+scale = Vector2( 2.5, 2 )
+texture = ExtResource( 1 )
+offset = Vector2( 4.1001, 20.2762 )
+
+[node name="Tree2a" type="AnimationPlayer" parent="Tree2"]
+autoplay = "TestAnim"
+method_call_mode = 1
+anims/TestAnim = SubResource( 4 )
+
+[node name="Tree3" type="Sprite" parent="."]
+visible = false
+position = Vector2( -400, 1050 )
+scale = Vector2( 2.5, 2 )
+texture = ExtResource( 97 )
+offset = Vector2( 4.1001, 20.2762 )
+
+[node name="Tree3a" type="AnimationPlayer" parent="Tree3"]
+autoplay = "TestAnim"
+method_call_mode = 1
+anims/TestAnim = SubResource( 5 )
+
+[node name="Tree4" type="Sprite" parent="."]
+visible = false
+position = Vector2( -400, 1050 )
+scale = Vector2( 2.5, 2 )
+texture = ExtResource( 1 )
+offset = Vector2( 4.1001, 20.2762 )
+
+[node name="Tree4a" type="AnimationPlayer" parent="Tree4"]
+autoplay = "TestAnim"
+method_call_mode = 1
+anims/TestAnim = SubResource( 6 )

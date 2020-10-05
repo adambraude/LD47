@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Boss 3 Fight.gd" type="Script" id=1]
 [ext_resource path="res://assets/boss-splash-3.png" type="Texture" id=2]
+[ext_resource path="res://Boss3.tscn" type="PackedScene" id=3]
 
 [node name="Boss 3 Fight" type="Node"]
 script = ExtResource( 1 )
+Boss3 = ExtResource( 3 )
 
 [node name="boss3Wait" type="Timer" parent="."]
 wait_time = 45.0
@@ -14,9 +16,12 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="BossScreen" type="Sprite" parent="."]
 visible = false
 position = Vector2( 962.752, 541.784 )
 texture = ExtResource( 2 )
+
+[node name="bossSpawn" type="Position2D" parent="."]
+position = Vector2( 950, 400 )
 [connection signal="timeout" from="boss3Wait" to="." method="_on_boss3Wait_timeout"]
 [connection signal="timeout" from="bossScreenTimer" to="." method="_on_bossScreenTimer_timeout"]

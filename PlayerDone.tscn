@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/car0_base.png" type="Texture" id=2]
 [ext_resource path="res://Health.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Gun2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Gun3.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 63.3024, 64.1042 )
@@ -47,11 +48,18 @@ offset = Vector2( -1.39581, -3.86515 )
 [node name="Health" parent="." instance=ExtResource( 3 )]
 max_amount = 30
 
-[node name="Gun" parent="." instance=ExtResource( 4 )]
-position = Vector2( -61.9792, -103.09 )
-
 [node name="Gun2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 46.4962, -112.34 )
+scale = Vector2( -1, 1 )
+
+[node name="Gun" parent="." instance=ExtResource( 5 )]
+position = Vector2( -57.0034, -114.63 )
+
+[node name="Rockets" parent="." instance=ExtResource( 6 )]
+position = Vector2( -83.0328, -58.5667 )
+
+[node name="Plasma" parent="." instance=ExtResource( 4 )]
+position = Vector2( 69.8063, -47.2205 )
 scale = Vector2( -1, 1 )
 [connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]

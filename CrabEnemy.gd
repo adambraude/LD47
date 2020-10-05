@@ -17,7 +17,9 @@ var explosionScene = load("res://Explosion.tscn")
 func _ready():
 	var player_health = $Health
 	var healthbar = $HealthBar
-	
+	$AnimationPlayer.play("Drop")
+	$AnimatedSprite.position[1] -= 400
+	$Healthbar.rect_position[1] -= 400
 	player_health.connect("changed", healthbar, "set_value")
 	player_health.connect("max_changed", healthbar, "set_max")
 	player_health.initialize()
@@ -43,6 +45,7 @@ func attackWait():
 	timer.start()
 
 func attack():
+	$Healthbar.visible = true
 	attacked = true
 	$AnimatedSprite.move_local_y(-33)
 	$AnimatedSprite.play("Attack")
@@ -83,6 +86,8 @@ func _on_Health_depleted():
 
 func _on_CrabEnemy_area_shape_entered(area_id, area, area_shape, local_shape):
 	print("crab was hit")
+	if area == null:
+		return
 	$Health.take_damage(area.damage)
 	if area.has_method("die"):
 		area.die()
