@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://EnemySpawner.gd" type="Script" id=1]
 [ext_resource path="res://BatEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://CrabEnemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://WheelEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Music/The Reflection by Sinyells - LZtvE (Old Version) (online-audio-converter.com).wav" type="AudioStream" id=5]
 
 [node name="EnemySpawner" type="Node"]
 script = ExtResource( 1 )
@@ -18,6 +19,11 @@ wait_time = 3.0
 
 [node name="WheelEnemyTimer" type="Timer" parent="."]
 wait_time = 6.0
+
+[node name="EnemyMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -14.0
 [connection signal="timeout" from="BatEnemyTimer" to="." method="_on_BatEnemyTimer_timeout"]
 [connection signal="timeout" from="CrabEnemyTimer" to="." method="_on_CrabEnemyTimer_timeout"]
 [connection signal="timeout" from="WheelEnemyTimer" to="." method="_on_WheelEnemyTimer_timeout"]
+[connection signal="finished" from="EnemyMusic" to="." method="_on_EnemyMusic_finished"]

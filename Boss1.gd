@@ -8,6 +8,8 @@ var fireballScene = load("res://Fireball.tscn")
 var fireballGScene = load("res://FireballGravy.tscn")
 var batScene = load("res://BatEnemy.tscn")
 
+var play = true
+
 export var gfireballsOn = false
 
 func bats():
@@ -32,6 +34,7 @@ func spreadShot():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	play = true
 	$AnimatedSprite.play("Idle")
 	
 	var player_health = $Health
@@ -55,7 +58,6 @@ func _process(delta):
 		  fb.get_node("Gravy").pull *= rand_range(2, 10)
 		  get_node("/root/").add_child(fb)
 		  $gfireballstimer.start()
-	pass
 
 func _on_Boss1_area_entered(area):
 	if area == null:
@@ -66,6 +68,8 @@ func _on_Boss1_area_entered(area):
 
 
 func _on_Health_depleted():
+	play = false
+	$BossMusic.stop()
 	queue_free()
 	for i in range(0, 100):
 		var explosion = explosionScene.instance()
@@ -84,3 +88,8 @@ func _on_Health_depleted():
 	get_tree().get_root().get_node("Main").find_node("Player").find_node("Plasma").set_process(true)
 	get_tree().get_root().get_node("Main").find_node("EnemySpawner").difficulty = 1
 	get_tree().get_root().get_node("Main").find_node("Boss 2 Fight").startBossTimer()
+
+
+func _on_BossMusic_finished():
+	if play == true:
+		$BossMusic.play(0)

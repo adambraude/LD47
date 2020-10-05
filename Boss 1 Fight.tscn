@@ -19,10 +19,12 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="BossScreenTimer" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 5.0
 one_shot = true
 
 [node name="bossSpawn" type="Position2D" parent="."]
 position = Vector2( 945.65, 250 )
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="."]
 [connection signal="timeout" from="Time until Boss" to="." method="_on_Time_until_Boss_timeout"]
 [connection signal="timeout" from="BossScreenTimer" to="." method="_on_BossScreenTimer_timeout"]
