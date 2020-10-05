@@ -19,6 +19,7 @@ func game_over():
 	$EnemySpawner/CrabEnemyTimer.stop()
 	get_tree().call_group("crabs", "queue_free")
 	get_tree().call_group("fireballs", "queue_free")
+	get_tree().change_scene("res://test scene.tscn")
 	
 func new_game():
 	$Player.start($StartPosition.position)

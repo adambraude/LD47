@@ -1,5 +1,6 @@
 extends Node
 
+export (PackedScene) var Boss1
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -27,5 +28,6 @@ func _on_Time_until_Boss_timeout():
 
 func _on_BossScreenTimer_timeout():
 	$BossScreen.queue_free()
-	# Spawn boss code here
-	pass
+	var boss = Boss1.instance()
+	boss.position = $bossSpawn.position
+	add_child(boss)
