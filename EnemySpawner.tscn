@@ -1,17 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://EnemySpawner.gd" type="Script" id=1]
 [ext_resource path="res://BatEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://CrabEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WheelEnemy.tscn" type="PackedScene" id=4]
 
 [node name="EnemySpawner" type="Node"]
 script = ExtResource( 1 )
 BatEnemy = ExtResource( 2 )
 CrabEnemy = ExtResource( 3 )
+WheelEnemy = ExtResource( 4 )
 
 [node name="BatEnemyTimer" type="Timer" parent="."]
 
 [node name="CrabEnemyTimer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="WheelEnemyTimer" type="Timer" parent="."]
+wait_time = 6.0
 [connection signal="timeout" from="BatEnemyTimer" to="." method="_on_BatEnemyTimer_timeout"]
 [connection signal="timeout" from="CrabEnemyTimer" to="." method="_on_CrabEnemyTimer_timeout"]
+[connection signal="timeout" from="WheelEnemyTimer" to="." method="_on_WheelEnemyTimer_timeout"]

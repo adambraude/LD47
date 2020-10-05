@@ -309,7 +309,6 @@ position = Vector2( 960, 724.711 )
 scale = Vector2( 1, 1.00565 )
 frames = SubResource( 1 )
 animation = "Road"
-frame = 1
 playing = true
 
 [node name="TrackAnimator" type="AnimationPlayer" parent="Road"]

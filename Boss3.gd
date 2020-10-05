@@ -4,7 +4,7 @@ extends Area2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var explosionScene = load("res://Explosion.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,4 +32,10 @@ func _on_Boss3_area_entered(area):
 
 func _on_Health_depleted():
 	queue_free()
+	for i in range(0, 100):
+		var explosion = explosionScene.instance()
+		explosion.position += Vector2(rand_range(-200, 200), rand_range(-200, 200))
+		explosion.play("fireball")
+		explosion.position = self.global_position
+		get_node("/root/").add_child(explosion)
 	get_tree().change_scene("res://test scene.tscn")

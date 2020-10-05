@@ -23,8 +23,6 @@ func _on_Time_until_Boss_timeout():
 	$BossScreen.visible = true
 	get_tree().get_root().get_node("Main").find_node("Player").find_node("Health").set_current(999)
 	get_tree().get_root().get_node("Main").find_node("EnemySpawner").removeAndStopAll()
-	
-	$AnimationPlayer.play("BossScreen")
 	$BossScreenTimer.start()
 
 func _on_BossScreenTimer_timeout():

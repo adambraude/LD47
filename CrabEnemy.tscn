@@ -127,13 +127,12 @@ collision_mask = 257
 script = ExtResource( 61 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -400 )
 frames = SubResource( 1 )
 animation = "Attack"
 offset = Vector2( -1.95476, -26.3718 )
 
 [node name="EnemyHitBox" type="CollisionShape2D" parent="."]
-position = Vector2( -2.245, -400 )
+position = Vector2( -2.245, 0 )
 shape = SubResource( 2 )
 
 [node name="Attack Cool Down" type="Timer" parent="."]
@@ -147,9 +146,9 @@ max_amount = 60
 
 [node name="Healthbar" parent="." instance=ExtResource( 63 )]
 margin_left = -59.986
-margin_top = -505.218
+margin_top = -136.218
 margin_right = 56.0145
-margin_bottom = -489.218
+margin_bottom = -120.218
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Drop = SubResource( 3 )

@@ -1,47 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Boss 1 Fight.gd" type="Script" id=1]
 [ext_resource path="res://assets/boss-splash-1.png" type="Texture" id=2]
 [ext_resource path="res://Boss1.tscn" type="PackedScene" id=3]
-
-[sub_resource type="Animation" id=1]
-resource_name = "BossScreen"
-length = 2.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("BossScreen:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4, 1.7, 2.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( -1000, 541.783 ), Vector2( 960.863, 541.783 ), Vector2( 960.863, 541.783 ), Vector2( 2000, 541.783 ) ]
-}
 
 [node name="Boss 1 Fight" type="Node"]
 script = ExtResource( 1 )
 Boss1 = ExtResource( 3 )
 
 [node name="Time until Boss" type="Timer" parent="."]
-wait_time = 45.0
+wait_time = 3.0
 one_shot = true
 
 [node name="BossScreen" type="Sprite" parent="."]
 visible = false
-position = Vector2( 2000, 541.783 )
 z_index = 100
 texture = ExtResource( 2 )
+centered = false
 
 [node name="BossScreenTimer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 45.0
 one_shot = true
 
 [node name="bossSpawn" type="Position2D" parent="."]
 position = Vector2( 945.65, 250.407 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BossScreen = SubResource( 1 )
 [connection signal="timeout" from="Time until Boss" to="." method="_on_Time_until_Boss_timeout"]
 [connection signal="timeout" from="BossScreenTimer" to="." method="_on_BossScreenTimer_timeout"]

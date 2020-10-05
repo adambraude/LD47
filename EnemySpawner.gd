@@ -2,12 +2,15 @@ extends Node
 
 export (PackedScene) var BatEnemy
 export (PackedScene) var CrabEnemy
+export (PackedScene) var WheelEnemy
+
+export var difficulty = 0
 
 # Declare member variables here. Examples:
 var SPAWNXLEFT = 225
 var SPAWNXRIGHT = 1700
-var SPAWNYUP = 50
-var SPAWNYDOWN = 350
+var SPAWNYUP = 100
+var SPAWNYDOWN = 400
 
 # Finds range of acceptable spawns
 var spawnWidth = SPAWNXRIGHT - SPAWNXLEFT
@@ -30,14 +33,33 @@ func getSpawn():
 #	pass
 
 func startSpawns():
-	$BatEnemyTimer.start()
-	$CrabEnemyTimer.start()
+	if (difficulty == 0):
+		$BatEnemyTimer.wait_time = 1.5
+		$CrabEnemyTimer.wait_time = 8
+		$BatEnemyTimer.start()
+		$CrabEnemyTimer.start(15)
+	if (difficulty == 1):
+		$BatEnemyTimer.wait_time = 1
+		$CrabEnemyTimer.wait_time = 5
+		$WheelEnemyTimer.wait_time = 10
+		$BatEnemyTimer.start()
+		$CrabEnemyTimer.start()
+		$WheelEnemyTimer.start(30)
+	if (difficulty == 2):
+		$BatEnemyTimer.wait_time = 0.75
+		$CrabEnemyTimer.wait_time = 3
+		$WheelEnemyTimer.wait_time = 6
+		$BatEnemyTimer.start()
+		$CrabEnemyTimer.start()
+		$WheelEnemyTimer.start()
 
 func removeAndStopAll():
 	$BatEnemyTimer.stop()
 	$CrabEnemyTimer.stop()
+	$WheelEnemyTimer.stop()
 	get_tree().call_group("crabs", "queue_free")
 	get_tree().call_group("bats", "queue_free")
+	get_tree().call_group("wheels", "queue_free")
 	get_tree().call_group("fireballs", "queue_free")
 
 func _on_StartTimer_timeout():
@@ -63,3 +85,10 @@ func _on_CrabEnemyTimer_timeout():
 	
 	var spawnin = getSpawn()
 	crab.position = spawn
+	
+func _on_WheelEnemyTimer_timeout():
+	var wheel = WheelEnemy.instance()
+	add_child(wheel)
+	
+	var spawnin = getSpawn()
+	wheel.position = spawn

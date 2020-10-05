@@ -17,6 +17,7 @@ var explosionScene = load("res://Explosion.tscn")
 func _ready():
 	var player_health = $Health
 	var healthbar = $HealthBar
+	position[1] -= 50 #kludge
 	$AnimationPlayer.play("Drop")
 	$AnimatedSprite.position[1] -= 400
 	$Healthbar.rect_position[1] -= 400

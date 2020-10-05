@@ -28,7 +28,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if($cooldown.time_left == 0):
-		  $AnimatedSprite.animation = "fire"
 		  var fb = fireball.instance()
 		  fb.position = self.global_position + Vector2(0, -80)
 		  fb.direction = PI*3/2
