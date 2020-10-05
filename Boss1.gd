@@ -21,9 +21,13 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
 func _on_Boss1_area_entered(area):
 	print("boss was hit")
 	$Health.take_damage(1)
 	if area.has_method("die"):
 		area.die()
+
+
+func _on_Health_depleted():
+	get_tree().get_root().get_node("Main").find_node("Boss 2 Fight").startBossTimer()
+	pass # Replace with function body.
