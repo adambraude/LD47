@@ -86,14 +86,12 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 83.3474, 46.9377 )
 
-[node name="BatEnemy" type="RigidBody2D" groups=[
+[node name="BatEnemy" type="Area2D" groups=[
 "bats",
 ]]
 position = Vector2( 1.68176, 0 )
 collision_layer = 512
 collision_mask = 257
-gravity_scale = 0.0
-contact_monitor = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -114,7 +112,7 @@ shape = SubResource( 3 )
 [node name="Attack Cool Down" type="Timer" parent="."]
 
 [node name="Health" parent="." instance=ExtResource( 42 )]
-max_amount = 2
+max_amount = 20
 
 [node name="ProgressBar" parent="." instance=ExtResource( 41 )]
 margin_left = -41.8871
@@ -122,7 +120,7 @@ margin_top = -80.47
 margin_right = 263.113
 margin_bottom = -39.47
 rect_scale = Vector2( 0.360001, 0.360001 )
-[connection signal="body_shape_entered" from="." to="." method="_on_BatEnemy_body_shape_entered"]
+[connection signal="area_shape_entered" from="." to="." method="_on_BatEnemy_area_shape_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="changed" from="Health" to="ProgressBar" method="set_value"]
 [connection signal="depleted" from="Health" to="." method="_on_Health_depleted"]

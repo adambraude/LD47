@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 
 export (PackedScene) var Fireball
 
@@ -62,30 +62,20 @@ func _on_AnimatedSprite_animation_finished():
 		
 		var normAttack = attackDir.normalized()
 		
-		fireball.set_linear_velocity(normAttack*attackSpeed)
+		fireball.velocity = (normAttack*attackSpeed).length()
+		fireball.direction = (normAttack*attackSpeed).angle()
 
 		get_node("/root/").add_child(fireball)
 		attackWait()
 		
 		
-func _on_Player_body_entered(_body):
-	print("crab was hit")
-	#emit_signal("hit")
-	$Health.take_damage(1)
-	#$CollisionShape2D.set_deferred("disabled", true)
 func _on_Health_depleted():
 	queue_free()
 
 
-func _on_CrabEnemy_body_shape_entered(body_id, body, body_shape, local_shape):
+func _on_CrabEnemy_area_shape_entered(area_id, area, area_shape, local_shape):
 	print("crab was hit")
-	#emit_signal("hit")
 	$Health.take_damage(1)
-	pass # Replace with function body.
-
-
-func _on_CrabEnemy_body_entered(body):
-	print("crab was hit")
-	#emit_signal("hit")
-	$Health.take_damage(1)
+	if area.has_method("die"):
+		area.die()
 	pass # Replace with function body.

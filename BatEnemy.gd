@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 
 export (PackedScene) var Fireball
 var fireball
@@ -94,9 +94,10 @@ func _on_Health_depleted():
 	
 	pass # Replace with function body.
 
-
-func _on_BatEnemy_body_shape_entered(body_id, body, body_shape, local_shape):
+func _on_BatEnemy_area_shape_entered(area_id, area, area_shape, self_shape):
 	print("Bat was hit")
 	#emit_signal("hit")
 	$Health.take_damage(1)
+	if area.has_method("die"):
+		area.die()
 	pass # Replace with function body.
