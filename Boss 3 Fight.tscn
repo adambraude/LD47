@@ -13,7 +13,7 @@ wait_time = 45.0
 one_shot = true
 
 [node name="bossScreenTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 7.0
 one_shot = true
 
 [node name="BossScreen" type="Sprite" parent="."]
@@ -23,5 +23,10 @@ centered = false
 
 [node name="bossSpawn" type="Position2D" parent="."]
 position = Vector2( 950, 400 )
+
+[node name="delayTime" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 [connection signal="timeout" from="boss3Wait" to="." method="_on_boss3Wait_timeout"]
 [connection signal="timeout" from="bossScreenTimer" to="." method="_on_bossScreenTimer_timeout"]
+[connection signal="timeout" from="delayTime" to="." method="_on_delayTime_timeout"]

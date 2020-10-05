@@ -9,7 +9,7 @@ script = ExtResource( 1 )
 Boss1 = ExtResource( 3 )
 
 [node name="Time until Boss" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 45.0
 one_shot = true
 
 [node name="BossScreen" type="Sprite" parent="."]
@@ -19,7 +19,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="BossScreenTimer" type="Timer" parent="."]
-wait_time = 45.0
+wait_time = 7.0
 one_shot = true
 
 [node name="bossSpawn" type="Position2D" parent="."]
