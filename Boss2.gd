@@ -8,6 +8,8 @@ var fireballNScene = load("res://Fireneedle.tscn")
 var fireballPScene = load("res://Purple.tscn")
 var crabScene = load("res://CrabEnemy.tscn")
 
+var play = true
+
 export var gfireballsOn = false
 export var rain = false
 
@@ -33,6 +35,8 @@ func spreadShot():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	play = true
+	
 	$AnimatedSprite.play("Idle")
 	$AnimationPlayer.play("Pattern")
 	
@@ -89,6 +93,8 @@ func _on_Boss2_area_entered(area):
 
 
 func _on_Health_depleted():
+	play = false
+	$BossMusic.stop()
 	queue_free()
 	for i in range(0, 100):
 		var explosion = explosionScene.instance()
@@ -107,3 +113,8 @@ func _on_Health_depleted():
 	get_tree().get_root().get_node("Main").find_node("Player").find_node("Rockets").set_process(true)
 	get_tree().get_root().get_node("Main").find_node("EnemySpawner").difficulty = 2
 	get_tree().get_root().get_node("Main").find_node("Boss 3 Fight").startBossTimer()
+
+
+func _on_BossMusic_finished():
+	if play == true:
+		$BossMusic.play(0)
