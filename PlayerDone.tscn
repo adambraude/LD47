@@ -21,23 +21,22 @@ animations = [ {
 } ]
 
 [node name="Player" type="Area2D"]
-position = Vector2( -5.722, 5.461 )
 collision_mask = 2
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2( 138, 130.476 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 138, 130.476 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 140.51, 129.38 )
 rotation = -3.93931e-08
 frames = SubResource( 2 )
 animation = "Moving"

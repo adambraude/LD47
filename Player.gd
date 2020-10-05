@@ -6,8 +6,8 @@ export var speed = 600 # speed of the car
 var screen_size
 
 # Declare member variables here.
-var leftBound = .09 #The left boundary of where the car can move
-var rightBound = .77 # The right boundary of where the car can move
+var leftBound = .15 #The left boundary of where the car can move
+var rightBound = .84 # The right boundary of where the car can move
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
