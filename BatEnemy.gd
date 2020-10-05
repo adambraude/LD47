@@ -80,11 +80,6 @@ func _on_AnimatedSprite_animation_finished():
 		get_node("/root/").add_child(fireball)
 		attackWait()
 		
-func _on_Player_body_entered(_body):
-	print("Bat was hit")
-	#emit_signal("hit")
-	$Health.take_damage(1)
-	#$CollisionShape2D.set_deferred("disabled", true)
 
 func set_max(new_max):
 	pass # Replace with function body.
@@ -105,7 +100,7 @@ func _on_Health_depleted():
 func _on_BatEnemy_area_shape_entered(area_id, area, area_shape, self_shape):
 	print("Bat was hit")
 	#emit_signal("hit")
-	$Health.take_damage(1)
+	$Health.take_damage(area.damage)
 	if area.has_method("die"):
 		area.die()
 	pass # Replace with function body.

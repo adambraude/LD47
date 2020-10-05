@@ -72,19 +72,19 @@ func _on_AnimatedSprite_animation_finished():
 		
 func _on_Health_depleted():
 	var explosion = explosionScene.instance()
-	explosion.scale(1.4,1.4)
+	explosion.scale = Vector2(1.5, 1.5)
 	get_node("/root/").add_child(explosion)
 	if randi() % 2 == 0:
-		explosion.play("explosion1")
+		explosion.play("explosion_1")
 	else:
-		explosion.play("explosion2")
+		explosion.play("explosion_2")
 	explosion.position = self.global_position
 	queue_free()
 
 
 func _on_CrabEnemy_area_shape_entered(area_id, area, area_shape, local_shape):
 	print("crab was hit")
-	$Health.take_damage(1)
+	$Health.take_damage(area.damage)
 	if area.has_method("die"):
 		area.die()
 	pass # Replace with function body.

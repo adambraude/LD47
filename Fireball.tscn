@@ -26,7 +26,7 @@ velocity = 500
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.370605, 0.296722 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 2 )

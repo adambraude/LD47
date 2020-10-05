@@ -12,10 +12,11 @@ export var drag = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimatedSprite.play("fire")
+	$Sprite.play("fire")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$Sprite.rotation = direction + PI*3/2
 	move_local_x(velocity*delta*cos(direction))
 	move_local_y(velocity*delta*sin(direction))
 	if (velocity < 0):

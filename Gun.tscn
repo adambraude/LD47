@@ -1,31 +1,35 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/minigun_mount.png" type="Texture" id=1]
-[ext_resource path="res://assets/minigun_mount_fire.png" type="Texture" id=2]
+[ext_resource path="res://assets/plasmagun_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/plasmagun_0.png" type="Texture" id=2]
 [ext_resource path="res://Gun.gd" type="Script" id=3]
+[ext_resource path="res://assets/plasmagun_2.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "fire",
-"speed": 24.0
+"speed": 6.0
 } ]
 
-[node name="Gun" type="Node2D"]
+[node name="Gun1" type="Node2D"]
 script = ExtResource( 3 )
+bulletType = "res://Bullet-1.tscn"
+accuracy = 32
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -19.8611, -28.3083 )
+position = Vector2( -13.6248, -18.5084 )
 frames = SubResource( 1 )
-animation = "idle"
+animation = "fire"
+frame = 1
 centered = false
 
 [node name="cooldown" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.25
 one_shot = true
