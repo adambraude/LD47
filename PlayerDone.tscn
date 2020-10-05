@@ -30,6 +30,8 @@ __meta__ = {
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 collision_mask = 2
+contacts_reported = 1
+contact_monitor = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource( 1 )

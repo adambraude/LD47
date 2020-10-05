@@ -42,7 +42,7 @@ func _on_BatEnemyTimer_timeout():
 	
 	# Find a spawning location that is allowed by the bat, and sets position to it
 	var spawnin = getSpawn()
-	bat.position = spawn
+	bat.position = spawnin
 	
 	# should handle the bat moving position. Currently broken
 	#bat.spawn(getSpawn())
