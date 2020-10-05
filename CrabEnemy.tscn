@@ -78,8 +78,12 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 62.1477, 121.591 )
 
-[node name="CrabEnemy" type="RigidBody2D"]
+[node name="CrabEnemy" type="RigidBody2D" groups=[
+"crabs",
+]]
 position = Vector2( 60.0387, 49.9744 )
+collision_layer = 0
+gravity_scale = 0.0
 script = ExtResource( 61 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -93,3 +97,7 @@ offset = Vector2( -1.95476, -26.3718 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -60.8112, -47.3762 )
 shape = SubResource( 2 )
+
+[node name="Attack Cool Down" type="Timer" parent="."]
+wait_time = 2.5
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

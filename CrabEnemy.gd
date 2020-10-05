@@ -4,6 +4,7 @@ extends RigidBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var attacked = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,7 +30,17 @@ func attackWait():
 	timer.start()
 	#fireball = Fireball.instance()
 
-
+func attack():
+	attacked = true
+	$AnimatedSprite.play("Attack")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_AnimatedSprite_animation_finished():
+	if attacked == true:
+		attacked = false
+		#fireball.position = $AnimatedSprite.position
+		#add_child(fireball)
+		attackWait()
