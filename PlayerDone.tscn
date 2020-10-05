@@ -61,5 +61,7 @@ position = Vector2( -83.0328, -58.5667 )
 [node name="Plasma" parent="." instance=ExtResource( 4 )]
 position = Vector2( 69.8063, -47.2205 )
 scale = Vector2( -1, 1 )
+
+[node name="PlayerTarget" type="Node" parent="."]
 [connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]

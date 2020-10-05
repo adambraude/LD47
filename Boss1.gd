@@ -58,8 +58,9 @@ func _process(delta):
 	pass
 
 func _on_Boss1_area_entered(area):
-	print("boss was hit")
-	$Health.take_damage(1)
+	if area == null:
+		return
+	$Health.take_damage(area.damage)
 	if area.has_method("die"):
 		area.die()
 

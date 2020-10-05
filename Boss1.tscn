@@ -129,7 +129,6 @@ margin_right = 217.551
 margin_bottom = -199.346
 
 [node name="Health" parent="." instance=ExtResource( 22 )]
-max_amount = 1000
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackPattern = SubResource( 3 )

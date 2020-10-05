@@ -23,6 +23,7 @@ func _process(delta):
 		turnDir += 2*PI
 	while turnDir > PI:
 		turnDir -= 2*PI
-	turnDir = turnDir/abs(turnDir)
+	if (turnDir != 0):
+		turnDir = turnDir/abs(turnDir)
 	get_parent().direction += delta*homing*turnDir
 	pass

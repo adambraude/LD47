@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Health.tscn" type="PackedScene" id=1]
 [ext_resource path="res://EnemyHealthBar.tscn" type="PackedScene" id=2]
@@ -33,30 +33,125 @@ animations = [ {
 "speed": 24.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 154.037, 231.625 )
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 15.7469
+height = 258.217
 
-[node name="Boss2" type="Area2D"]
+[sub_resource type="Animation" id=3]
+resource_name = "Pattern"
+length = 20.0
+loop = true
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1.5, 4.5, 5.1, 8, 8.5, 11, 11.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "spreadShot"
+}, {
+"args": [  ],
+"method": "spreadShot"
+}, {
+"args": [  ],
+"method": "spreadShot"
+}, {
+"args": [  ],
+"method": "spreadShot"
+}, {
+"args": [  ],
+"method": "spreadShot"
+}, {
+"args": [  ],
+"method": "spreadShot"
+}, {
+"args": [  ],
+"method": "spreadShot"
+}, {
+"args": [  ],
+"method": "spreadShot"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:gfireballsOn")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.5, 4, 6, 7.5, 9, 10.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2.5, 4, 6, 7.5, 9, 10.5, 12, 13, 13.001 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -300, 0 ), Vector2( -300, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 300, 0 ), Vector2( 300, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rain")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 13, 19.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[node name="Container" type="Node2D"]
+
+[node name="Boss2" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 257
+collision_mask = 256
 script = ExtResource( 4 )
+gfireballsOn = true
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -20.0226, -4.00455 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Boss2"]
 frames = SubResource( 1 )
 animation = "Idle"
 
-[node name="EnemyHitBox" type="CollisionShape2D" parent="."]
-position = Vector2( -28.0616, 22.4492 )
-shape = SubResource( 2 )
+[node name="EnemyHitBox" type="CollisionShape2D" parent="Boss2"]
+scale = Vector2( 3.93759, 1.28756 )
+shape = SubResource( 4 )
 
-[node name="HealthBar" parent="." instance=ExtResource( 2 )]
-margin_left = -197.367
-margin_top = -292.265
-margin_right = 120.633
-margin_bottom = -251.265
+[node name="HealthBar" parent="Boss2" instance=ExtResource( 2 )]
+margin_left = -161.691
+margin_top = -243.508
+margin_right = 156.309
+margin_bottom = -202.508
 
-[node name="Health" parent="." instance=ExtResource( 1 )]
-max_amount = 1800
-[connection signal="area_entered" from="." to="." method="_on_Boss2_area_entered"]
-[connection signal="depleted" from="Health" to="." method="_on_Health_depleted"]
+[node name="Health" parent="Boss2" instance=ExtResource( 1 )]
+max_amount = 1200
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boss2"]
+anims/Pattern = SubResource( 3 )
+
+[node name="gfireballstimer" type="Timer" parent="Boss2"]
+wait_time = 0.1
+one_shot = true
+
+[node name="raintimer" type="Timer" parent="Boss2"]
+wait_time = 0.3
+one_shot = true
+
+[node name="shottimer" type="Timer" parent="Boss2"]
+wait_time = 1.5
+one_shot = true
+[connection signal="area_entered" from="Boss2" to="Boss2" method="_on_Boss2_area_entered"]
+[connection signal="depleted" from="Boss2/Health" to="Boss2" method="_on_Health_depleted"]
+[connection signal="depleted" from="Boss2/Health" to="." method="_on_Health_depleted"]
